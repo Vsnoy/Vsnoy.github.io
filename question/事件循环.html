@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <link rel="icon" href="/header.jpg"><title>事件循环 | Trauma</title><meta name="description" content="">
+    <link rel="modulepreload" href="/assets/app.19e0d641.js"><link rel="modulepreload" href="/assets/事件循环.html.a6c0405b.js"><link rel="modulepreload" href="/assets/事件循环.html.b0d644ac.js"><link rel="prefetch" href="/assets/index.html.bf81b062.js"><link rel="prefetch" href="/assets/css.html.b368d822.js"><link rel="prefetch" href="/assets/js.html.0d254c4f.js"><link rel="prefetch" href="/assets/react.html.9fb4e119.js"><link rel="prefetch" href="/assets/css.html.37314115.js"><link rel="prefetch" href="/assets/html.html.ecebcb95.js"><link rel="prefetch" href="/assets/js.html.f379d8a7.js"><link rel="prefetch" href="/assets/react.html.77ed9bbc.js"><link rel="prefetch" href="/assets/this 指向.html.52649310.js"><link rel="prefetch" href="/assets/作用域.html.9bccc184.js"><link rel="prefetch" href="/assets/其他.html.60cafb14.js"><link rel="prefetch" href="/assets/变量提升.html.7a32cee7.js"><link rel="prefetch" href="/assets/引用类型地址.html.096e157d.js"><link rel="prefetch" href="/assets/循环绑定.html.fdd7fba2.js"><link rel="prefetch" href="/assets/数组去重.html.ca976ce1.js"><link rel="prefetch" href="/assets/闭包.html.94a79c66.js"><link rel="prefetch" href="/assets/study.html.60127fb9.js"><link rel="prefetch" href="/assets/tool.html.a4247b47.js"><link rel="prefetch" href="/assets/git commit 提交规范.html.7c88632d.js"><link rel="prefetch" href="/assets/git log 简洁模式.html.a1b72c3b.js"><link rel="prefetch" href="/assets/git rebase 合并多个 commit.html.4aed61c8.js"><link rel="prefetch" href="/assets/git stash 储藏.html.3c35da42.js"><link rel="prefetch" href="/assets/git 版本回退.html.70210221.js"><link rel="prefetch" href="/assets/git 设置代理.html.a5ca0926.js"><link rel="prefetch" href="/assets/gitignore 文件配置.html.54a6731b.js"><link rel="prefetch" href="/assets/n 管理版本.html.1a1d8baa.js"><link rel="prefetch" href="/assets/nrm 切换镜像源.html.7585d9ba.js"><link rel="prefetch" href="/assets/nvm 管理版本.html.a79d0f0b.js"><link rel="prefetch" href="/assets/ssh 连接 github.html.260f3b97.js"><link rel="prefetch" href="/assets/盒子模型.html.9a9ea1a0.js"><link rel="prefetch" href="/assets/new 执行过程.html.1d0b01a6.js"><link rel="prefetch" href="/assets/this 指向.html.df5f5ca1.js"><link rel="prefetch" href="/assets/事件循环.html.1ec1dffd.js"><link rel="prefetch" href="/assets/作用域链.html.0749f04e.js"><link rel="prefetch" href="/assets/内存堆栈.html.925f8978.js"><link rel="prefetch" href="/assets/原型链.html.d47c0ea6.js"><link rel="prefetch" href="/assets/变量、函数提升.html.2884fc3f.js"><link rel="prefetch" href="/assets/变量对象.html.8bc8bdcf.js"><link rel="prefetch" href="/assets/执行上下文栈.html.f281904e.js"><link rel="prefetch" href="/assets/节流防抖.html.ecd66ceb.js"><link rel="prefetch" href="/assets/词法作用域.html.214ee022.js"><link rel="prefetch" href="/assets/闭包.html.bb5717c3.js"><link rel="prefetch" href="/assets/同步异步 _ 批处理.html.d3e787f2.js"><link rel="prefetch" href="/assets/立即计算 _ 懒计算.html.eb05cf70.js"><link rel="prefetch" href="/assets/404.html.7d858b3d.js"><link rel="prefetch" href="/assets/index.html.3115300e.js"><link rel="prefetch" href="/assets/css.html.9adcb46a.js"><link rel="prefetch" href="/assets/js.html.ec7f0468.js"><link rel="prefetch" href="/assets/react.html.96d27714.js"><link rel="prefetch" href="/assets/css.html.0bb706e0.js"><link rel="prefetch" href="/assets/html.html.1993dd4b.js"><link rel="prefetch" href="/assets/js.html.023a9c04.js"><link rel="prefetch" href="/assets/react.html.11b02f5b.js"><link rel="prefetch" href="/assets/this 指向.html.5ad01709.js"><link rel="prefetch" href="/assets/作用域.html.b7abaeca.js"><link rel="prefetch" href="/assets/其他.html.af4c6f09.js"><link rel="prefetch" href="/assets/变量提升.html.1fce0c7c.js"><link rel="prefetch" href="/assets/引用类型地址.html.3db0c89b.js"><link rel="prefetch" href="/assets/循环绑定.html.6aa4a3df.js"><link rel="prefetch" href="/assets/数组去重.html.64427b43.js"><link rel="prefetch" href="/assets/闭包.html.6b8b829c.js"><link rel="prefetch" href="/assets/study.html.9c3b83c6.js"><link rel="prefetch" href="/assets/tool.html.26b9964f.js"><link rel="prefetch" href="/assets/git commit 提交规范.html.65d83a18.js"><link rel="prefetch" href="/assets/git log 简洁模式.html.5506cb64.js"><link rel="prefetch" href="/assets/git rebase 合并多个 commit.html.8f76a04c.js"><link rel="prefetch" href="/assets/git stash 储藏.html.f80c7e6f.js"><link rel="prefetch" href="/assets/git 版本回退.html.61d2b0f4.js"><link rel="prefetch" href="/assets/git 设置代理.html.1cae5c6c.js"><link rel="prefetch" href="/assets/gitignore 文件配置.html.586e9419.js"><link rel="prefetch" href="/assets/n 管理版本.html.b719ca51.js"><link rel="prefetch" href="/assets/nrm 切换镜像源.html.ebc9de9c.js"><link rel="prefetch" href="/assets/nvm 管理版本.html.ddb56793.js"><link rel="prefetch" href="/assets/ssh 连接 github.html.c48d4a94.js"><link rel="prefetch" href="/assets/盒子模型.html.550f1c1c.js"><link rel="prefetch" href="/assets/new 执行过程.html.d8e13760.js"><link rel="prefetch" href="/assets/this 指向.html.a19a6c7c.js"><link rel="prefetch" href="/assets/事件循环.html.f7df98a0.js"><link rel="prefetch" href="/assets/作用域链.html.cc6bced8.js"><link rel="prefetch" href="/assets/内存堆栈.html.079e1958.js"><link rel="prefetch" href="/assets/原型链.html.66156330.js"><link rel="prefetch" href="/assets/变量、函数提升.html.2932d763.js"><link rel="prefetch" href="/assets/变量对象.html.17f718d9.js"><link rel="prefetch" href="/assets/执行上下文栈.html.be728740.js"><link rel="prefetch" href="/assets/节流防抖.html.5b18d22f.js"><link rel="prefetch" href="/assets/词法作用域.html.d07f5f0c.js"><link rel="prefetch" href="/assets/闭包.html.42fdf57b.js"><link rel="prefetch" href="/assets/同步异步 _ 批处理.html.87235cdc.js"><link rel="prefetch" href="/assets/立即计算 _ 懒计算.html.d942d612.js"><link rel="prefetch" href="/assets/404.html.de6c0131.js"><link rel="prefetch" href="/assets/404.3eb12dbe.js"><link rel="prefetch" href="/assets/Layout.a995559f.js">
+    <link rel="stylesheet" href="/assets/style.afa099b4.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">Trauma</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">事件循环 <!----></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题-1" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题 1"><!--[--><!--]--> 习题 1 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题-2" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题 2"><!--[--><!--]--> 习题 2 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题-3" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题 3"><!--[--><!--]--> 习题 3 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题-4" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题 4"><!--[--><!--]--> 习题 4 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题组-1" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题组 1"><!--[--><!--]--> 习题组 1 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题一" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题一"><!--[--><!--]--> 习题一 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题二" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题二"><!--[--><!--]--> 习题二 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题三" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题三"><!--[--><!--]--> 习题三 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题四" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题四"><!--[--><!--]--> 习题四 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题五" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题五"><!--[--><!--]--> 习题五 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题组-2" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题组 2"><!--[--><!--]--> 习题组 2 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题一-1" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题一"><!--[--><!--]--> 习题一 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题二-1" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题二"><!--[--><!--]--> 习题二 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/question/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.html#习题三-1" class="router-link-active router-link-exact-active sidebar-item" aria-label="习题三"><!--[--><!--]--> 习题三 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="事件循环" tabindex="-1"><a class="header-anchor" href="#事件循环" aria-hidden="true">#</a> 事件循环</h1><div class="custom-container tip"><p class="custom-container-title">要点</p><ul><li><p>异步任务先注册再执行。尤须注意 <code>Promise</code> 多个 <code>then</code> 时微任务的注册顺序</p></li><li><p><code>then</code> 微任务注册时机。碰到 <code>then</code> 时再注册，而非一看到 <code>resolve</code> 就立即注册，<code>resolve</code> 仅是确保该 <code>then</code> 微任务能够被注册</p></li><li><p>遇到 <code>await</code>，会立即执行右边的语句，然后提前跳出 <code>async</code> 函数，待外部执行完毕后，再返回 <code>async</code> 函数内部继续执行未执行完的</p></li></ul></div><h2 id="习题-1" tabindex="-1"><a class="header-anchor" href="#习题-1" aria-hidden="true">#</a> 习题 1</h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>console.log(&#39;start&#39;)
+
+setTimeout(() =&gt; {
+  console.log(&#39;children2&#39;)
+  Promise.resolve().then(() =&gt; {
+    console.log(&#39;children3&#39;)
+  })
+}, 0)
+
+new Promise(function(resolve, reject) {
+  console.log(&#39;children4&#39;)
+  setTimeout(function() {
+    console.log(&#39;children5&#39;)
+    resolve(&#39;children6&#39;)
+  }, 0)
+}).then(res =&gt;{         
+  console.log(&#39;children7&#39;)
+  setTimeout(() =&gt; {
+    console.log(res)
+  }, 0)
+})
+
+// 输出
+start
+children4
+children2
+children3 
+children5
+children7 
+children6
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="习题-2" tabindex="-1"><a class="header-anchor" href="#习题-2" aria-hidden="true">#</a> 习题 2 <span class="badge tip" style=""><!--[-->hard<!--]--></span></h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>setTimeout(() =&gt; { // 宏 1
+  console.log(0)
+})
+
+new Promise(resolve =&gt; {
+  resolve()
+  Promise.resolve().then(() =&gt; { // 微 1
+    console.log(2)
+    Promise.resolve().then(() =&gt; { // 微 3
+      console.log(4)
+    })
+ })
+ console.log(3)
+}).then(() =&gt; { // 微 2
+  console.log(1)
+})
+
+console.log(5)
+
+// 输出
+3、5、2、1、4、0
+
+// 解析
+script 整体作为一个宏任务开始执行
+碰到 setTimeout，注册宏 1
+碰到第一个 then，注册微 1
+继续执行同步代码，输出 3
+碰到第二个 then，注册微 2
+继续执行同步代码，输出 5
+script 整体宏任务执行完毕，检查微任务队列不为空，准备逐一执行
+取出微 1，输出 2
+碰到第三个 then，注册微 3
+取出微 2，输出 1
+取出微 3，输出 4
+当前微任务队列所有微任务执行完毕，准备执行下一个宏任务
+取出宏 1，输出 0
+宏 1 执行完毕，检查微任务队列为空，则准备执行下一个宏任务，检查宏任务队列也为空，则事件循环结束
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="习题-3" tabindex="-1"><a class="header-anchor" href="#习题-3" aria-hidden="true">#</a> 习题 3</h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>console.log(1) 
+
+setTimeout(() =&gt; { // 宏 1
+  console.log(2)     
+  Promise.resolve().then(() =&gt; { 微 4
+    console.log(3)  
+  })
+})
+
+new Promise((resolve, reject) =&gt; {
+  console.log(4) 
+  resolve(5)
+}).then((data) =&gt; { // 微 1
+  console.log(data)  
+  Promise.resolve().then(() =&gt; { // 微 2
+    console.log(6)  
+  }).then(() =&gt; { // 微 3
+    console.log(7)  
+    setTimeout(() =&gt; { // 宏 3
+      console.log(8)  
+    }, 0)
+  })
+})
+
+setTimeout(() =&gt; { // 宏 2
+  console.log(9)     
+})
+
+console.log(10)
+
+// 输出
+1、4、10、5、6、7、2、3、9、8
+
+// 解析
+script 整体作为一个宏任务开始执行
+执行同步代码，输出 1
+碰到第一个 setTimeout，注册宏 1
+继续执行同步代码，输出 4
+碰到第一个 then，注册微 1
+碰到第二个 setTimeout，注册宏 2
+继续执行同步代码，输出 10
+script 整体宏任务执行完毕，检查微任务队列不为空，准备逐一执行
+取出微 1，输出 5
+碰到第二个 then，注册微 2
+取出微 2，输出 6
+碰到第三个 then，注册微 3
+取出微 3，输出 7
+碰到第三个宏任务，注册宏 3
+当前微任务队列所有微任务执行完毕，准备执行下一个宏任务
+取出宏 1，输出 2
+碰到第四个微任务，注册微 4
+宏 1 执行完毕，检查微任务队列不为空，准备逐一执行
+取出微 4，输出 3
+当前微任务队列所有微任务执行完毕，准备执行下一个宏任务
+取出宏 2，输出 9
+宏 2 执行完毕，检查微任务队列为空，则准备执行下一个宏任务，检查宏任务队列不为空
+取出宏 3，输出 8
+宏 3 执行完毕，检查微任务队列为空，则准备执行下一个宏任务，检查宏任务队列也为空，则事件循环结束
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="习题-4" tabindex="-1"><a class="header-anchor" href="#习题-4" aria-hidden="true">#</a> 习题 4 <span class="badge tip" style=""><!--[-->hard<!--]--></span></h2><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var myPromise = Promise.resolve(Promise.resolve(&#39;Promise&#39;))
+
+function funcOne() {
+  console.log(&#39;funcOne Start&#39;)
+  myPromise.then(res =&gt; res).then(res =&gt; console.log(&#39;funcOne &#39; + res))
+  setTimeout(() =&gt; console.log(&#39;funcOne Timeout&#39;), 0)
+  console.log(&#39;funcOne End&#39;)
+}
+
+async function funcTwo() {
+  console.log(&#39;funcTwo Start&#39;)
+  const res = await myPromise
+  console.log(await &#39;funcTwo &#39; + res)
+  setTimeout(() =&gt; console.log(&#39;funcTwo Timeout&#39;), 0)
+  console.log(&#39;funcTwo End&#39;)
+}
+
+funcOne()
+funcTwo()
+
+// 输出
+funcOne Start
+funcOne End
+funcTwo Start
+funcOne Promise
+funcTwo Promise
+funcTwo End
+funcOne Timeout
+funcTwo Timeout
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="习题组-1" tabindex="-1"><a class="header-anchor" href="#习题组-1" aria-hidden="true">#</a> 习题组 1</h2><h3 id="习题一" tabindex="-1"><a class="header-anchor" href="#习题一" aria-hidden="true">#</a> 习题一</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+  console.log(&#39;外部 promise&#39;)
+  resolve()
+}).then(() =&gt; {
+  console.log(&#39;外部第一个 then&#39;)
+  return new Promise((resolve, reject) =&gt; {
+    console.log(&#39;内部 promise&#39;)
+    resolve()
+  }).then(() =&gt; {
+    console.log(&#39;内部第一个 then&#39;)
+  }).then(() =&gt; {
+    console.log(&#39;内部第二个 then&#39;)
+  })
+}).then(() =&gt; {
+  console.log(&#39;外部第二个 then&#39;)
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+内部第一个 then
+内部第二个 then
+外部第二个 then
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="习题二" tabindex="-1"><a class="header-anchor" href="#习题二" aria-hidden="true">#</a> 习题二</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+  console.log(&#39;外部 promise&#39;)
+  resolve()
+}).then(() =&gt; {
+  console.log(&#39;外部第一个 then&#39;)
+  new Promise((resolve, reject) =&gt; {
+    console.log(&#39;内部 promise&#39;)
+    resolve()
+  }).then(() =&gt; {
+    console.log(&#39;内部第一个 then&#39;)
+  }).then(() =&gt; {
+    console.log(&#39;内部第二个 then&#39;)
+  })
+}).then(() =&gt; {
+  console.log(&#39;外部第二个 then&#39;)
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+内部第一个 then
+外部第二个 then
+内部第二个 then
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="习题三" tabindex="-1"><a class="header-anchor" href="#习题三" aria-hidden="true">#</a> 习题三</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+  console.log(&#39;外部 promise&#39;)
+  resolve()
+}).then(() =&gt; {
+  console.log(&#39;外部第一个 then&#39;)
+  let p = new Promise((resolve, reject) =&gt; {
+    console.log(&#39;内部 promise&#39;)
+    resolve()
+  })
+  p.then(() =&gt; {
+    console.log(&#39;内部第一个 then&#39;)
+  })
+  p.then(() =&gt; {
+    console.log(&#39;内部第二个 then&#39;)
+  })
+}).then(() =&gt; {
+  console.log(&#39;外部第二个 then&#39;)
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+内部第一个 then
+内部第二个 then
+外部第二个 then
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="习题四" tabindex="-1"><a class="header-anchor" href="#习题四" aria-hidden="true">#</a> 习题四 <span class="badge tip" style=""><!--[-->hard<!--]--></span></h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let p = new Promise((resolve, reject) =&gt; {
+  console.log(&#39;外部 promise&#39;)
+  resolve()
+})
+p.then(() =&gt; {
+  console.log(&#39;外部第一个 then&#39;)
+  new Promise((resolve, reject) =&gt; {
+    console.log(&#39;内部 promise&#39;)
+    resolve()
+  }).then(() =&gt; {
+    console.log(&#39;内部第一个 then&#39;)
+  }).then(() =&gt; {
+    console.log(&#39;内部第二个 then&#39;)
+  })
+})
+p.then(() =&gt; {
+  console.log(&#39;外部第二个 then&#39;)
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+外部第二个 then
+内部第一个 then
+内部第二个 then
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="习题五" tabindex="-1"><a class="header-anchor" href="#习题五" aria-hidden="true">#</a> 习题五 <span class="badge tip" style=""><!--[-->hard<!--]--></span></h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+  console.log(&#39;外部 promise&#39;)
+  resolve()
+}).then(() =&gt; {
+  console.log(&#39;外部第一个 then&#39;)
+  new Promise((resolve, reject) =&gt; {
+    console.log(&#39;内部 promise&#39;)
+    resolve()
+  }).then(() =&gt; {
+    console.log(&#39;内部第一个 then&#39;)
+  }).then(() =&gt; {
+    console.log(&#39;内部第二个 then&#39;)
+  })
+  return new Promise((resolve, reject) =&gt; {
+    console.log(&#39;内部 promise2&#39;)
+    resolve()
+  }).then(() =&gt; {
+    console.log(&#39;内部第一个 then2&#39;)
+  }).then(() =&gt; {
+    console.log(&#39;内部第二个 then2&#39;)
+  })
+}).then(() =&gt; {
+  console.log(&#39;外部第二个 then&#39;)
+})
+
+// 输出
+外部 promise
+外部第一个 then
+内部 promise
+内部 promise2
+内部第一个 then
+内部第一个 then2
+内部第二个 then
+内部第二个 then2
+外部第二个 then
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="习题组-2" tabindex="-1"><a class="header-anchor" href="#习题组-2" aria-hidden="true">#</a> 习题组 2</h2><h3 id="习题一-1" tabindex="-1"><a class="header-anchor" href="#习题一-1" aria-hidden="true">#</a> 习题一</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>async function async1() {
+  console.log(&#39;async1 start&#39;)
+  await async2()
+  console.log(&#39;async1 end&#39;)
+}
+
+async function async2() {
+  console.log(&#39;async2&#39;)
+}
+
+console.log(&#39;script start&#39;)
+
+setTimeout(function () {
+  console.log(&#39;setTimeout&#39;)
+}, 0)
+
+async1()
+
+new Promise((resolve) =&gt; {
+  console.log(&#39;promise1&#39;)
+  resolve()
+}).then(function () {
+  console.log(&#39;promise2&#39;)
+})
+
+console.log(&#39;script end&#39;)
+
+// 输出
+script start
+async1 start
+async2
+promise1
+script end
+async1 end
+promise2
+setTimeout
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="习题二-1" tabindex="-1"><a class="header-anchor" href="#习题二-1" aria-hidden="true">#</a> 习题二</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>async function async1() {
+  console.log(&#39;async1 start&#39;)
+  await async2()
+  console.log(&#39;async1 end&#39;)
+}
+
+async function async2() {
+  new Promise(function (resolve) {
+    console.log(&#39;promise1&#39;)
+    resolve()
+  }).then(function () {
+    console.log(&#39;promise2&#39;)
+  })
+}
+
+console.log(&#39;script start&#39;)
+
+setTimeout(function () {
+  console.log(&#39;setTimeout&#39;)
+}, 0)
+
+async1()
+
+new Promise(function (resolve) {
+  console.log(&#39;promise3&#39;)
+  resolve()
+}).then(function () {
+  console.log(&#39;promise4&#39;)
+})
+
+console.log(&#39;script end&#39;)
+
+// 输出
+script start
+async1 start 
+promise1
+promise3 
+script end 
+promise2
+async1 end
+promise4
+setTimeout
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="习题三-1" tabindex="-1"><a class="header-anchor" href="#习题三-1" aria-hidden="true">#</a> 习题三 <span class="badge tip" style=""><!--[-->hard<!--]--></span></h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>async function async1() {
+  console.log(&#39;async1 start&#39;)
+  await async2()
+  setTimeout(function() {
+    console.log(&#39;setTimeout1&#39;)  
+  }, 0)
+}
+
+async function async2() {
+  setTimeout(function() {
+    console.log(&#39;setTimeout2&#39;)
+  }, 0)
+}
+
+console.log(&#39;script start&#39;)
+
+setTimeout(function() {
+  console.log(&#39;setTimeout3&#39;)
+}, 0)
+
+async1()
+
+new Promise(function(resolve) {
+  console.log(&#39;promise1&#39;)
+  resolve()
+}).then(function() {
+  console.log(&#39;promise2&#39;)
+})
+
+console.log(&#39;script end&#39;)
+
+// 输出
+script start
+async1 start
+promise1
+script end
+promise2
+setTimeout3
+setTimeout2
+setTimeout1
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: truama@outlook.com">Vsnoy</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><canvas id="vuepress-canvas-cursor"></canvas><!--]--></div>
+    <script type="module" src="/assets/app.19e0d641.js" defer></script>
+  </body>
+</html>
