@@ -46,7 +46,6 @@ module.exports = {
     //     },
     //   },
     // })
-    // ['cursor-effects'],
   ],
   theme: defaultTheme({
     lastUpdated: "Last Updated",
