@@ -22,7 +22,6 @@ module.exports = {
     },
   },
   plugins: [
-    // codeCopyPlugin(),
     backToTopPlugin(),
     cursorEffects({
       size: 2,
