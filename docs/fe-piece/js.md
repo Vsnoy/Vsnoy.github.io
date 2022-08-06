@@ -46,13 +46,13 @@ arr.map(function callback(currentValue[,index[, array]]) {
   - `array`: 被调用的数组。
 - `thisArg`: 执行 `callback` 函数时使用的 `this` 值。
 
-## var、let 及 const 区别
+## var、let 及 const
 
 ![var_let_const](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/var_let_const.jpg)
 
 [深入理解 let](https://github.com/gengarneko/blog-vuepress/tree/master/docs/frontEnd/es6)
 
-## event.target 和 event.currentTarget 区别
+## event.target & event.currentTarget
 
 - event.target：事件触发者
 - event.currentTarget：事件监听者
@@ -72,7 +72,7 @@ arr.map(function callback(currentValue[,index[, array]]) {
 
 [event.target 和 event.currentTarget](https://segmentfault.com/a/1190000003021586)
 
-## Object.is 和 === 区别
+## Object.is 和 ===
 
 主要在于对 `NaN` 和 `±0` 的处理不同。
 
@@ -84,7 +84,7 @@ Object.is(NaN, NaN)  // true
 Object.is(+0, -0)  // false
 ```
 
-## Number.isNaN 和 isNaN 区别
+## Number.isNaN & isNaN
 
 - `Number.isNaN` 只在参数值为 `NaN` 时，返回 `true`
 - `isNaN` 会尝试将参数转换为数值，任何不能被转换为数值的的值都会返回 `true`

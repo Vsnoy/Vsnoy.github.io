@@ -1,9 +1,12 @@
 const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
 const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance")
-const { cursorEffects } = require("@anyfork/vuepress-plugin-cursor-effects-next")
+const { cursorEffects: cursorEffectsPlugin } = require("@anyfork/vuepress-plugin-cursor-effects-next")
+const { rightAnchorPlugin } = require("vuepress-plugin-right-anchor")
 
 const { defaultTheme } = require('@vuepress/theme-default')
-const nav = require('./nav')
+
+const navbar = require('./navbar')
+const sidebar = require('./sidebar')
 
 module.exports = {
   title: "Trauma",
@@ -23,32 +26,30 @@ module.exports = {
   },
   plugins: [
     backToTopPlugin(),
-    cursorEffects({
-      size: 2,
-      shape: 'star',
-      zIndex: 999999999
-    }),
     mdEnhancePlugin({
       footnote: true,
       sub: true,
       sup: true,
     }),
-    // AutoSidebarPluginOptions({
-    //   title: {
-    //     mode: "titlecase",
-    //     map: {
-    //       "/fe-piece/": "Piece",
-    //       "/fe-basic/css/": "CSS",
-    //       "/fe-basic/js/": "JS",
-    //       "/engineer/ssh/": "SSH",
-    //       "/question/js/": "JS",
-    //     },
-    //   },
-    // })
+    rightAnchorPlugin({
+      showDepth: 1,
+        // ignore: [
+        //   '/',
+        // ],
+        expand: {
+          trigger: 'hover',
+          clickModeDefaultOpen: true
+        },
+    }),
+    cursorEffectsPlugin({
+      size: 2,
+      shape: 'star',
+      zIndex: 999999999
+    }),
   ],
   theme: defaultTheme({
     lastUpdated: "Last Updated",
-    sidebar: "auto",
-    nav,
+    sidebar,
+    navbar,
   }),
 };

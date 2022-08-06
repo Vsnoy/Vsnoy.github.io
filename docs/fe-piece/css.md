@@ -1,6 +1,6 @@
 # CSS
 
-## nth-child 与 nth-of-type 区别
+## nth-child & nth-of-type
 
 ### nth-child
 

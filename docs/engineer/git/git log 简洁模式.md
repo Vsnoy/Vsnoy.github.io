@@ -1,3 +1,7 @@
+---
+sidebarDepth: 0
+---
+
 # git log 简洁模式
 
 使用别名自定义 `git logp` 指令，简化 `log` 输出日志
