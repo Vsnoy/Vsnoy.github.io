@@ -146,5 +146,9 @@ module.exports = {
       text: "工具网站",
       link: encodeURI("/resource/tool")
     },
+    {
+      text: "博客搭建",
+      link: encodeURI("/resource/blog")
+    },
   ]
 }

@@ -7,6 +7,16 @@ pre code {
   color: #fff !important;
 }
 
+.search-box {
+  order: -1;
+  margin-right: 1.5rem;
+
+  // .suggestions {
+  //   left: auto !important;
+  //   right: 0 !important;
+  // }
+}
+
 .right-anchor {
   --rightAnchorTextColor: var(--c-text);
   --rightAnchorFontSize: 14px;
@@ -32,6 +42,8 @@ pre code {
 
 :root {
   --c-brand: #0085a1;
+  --search-input-width: 10rem !important;
+  --search-result-width: 10rem !important;
 }
 
 html.dark {

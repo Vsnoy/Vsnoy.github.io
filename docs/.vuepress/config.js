@@ -1,3 +1,5 @@
+const { searchPlugin } = require('@vuepress/plugin-search')
+const { clipboardPlugin } = require('vuepress-plugin-clipboard')
 const { backToTopPlugin } = require('@vuepress/plugin-back-to-top')
 const { mdEnhancePlugin } = require("vuepress-plugin-md-enhance")
 const { cursorEffects: cursorEffectsPlugin } = require("@anyfork/vuepress-plugin-cursor-effects-next")
@@ -15,7 +17,7 @@ module.exports = {
       "link",
       {
         rel: "icon",
-        href: "/header.jpg",
+        href: "/header.png",
       },
     ],
   ],
@@ -25,26 +27,25 @@ module.exports = {
     },
   },
   plugins: [
+    searchPlugin(),
+    clipboardPlugin({}),
     backToTopPlugin(),
     mdEnhancePlugin({
       footnote: true,
       sub: true,
       sup: true,
     }),
-    rightAnchorPlugin({
-      showDepth: 1,
-        // ignore: [
-        //   '/',
-        // ],
-        expand: {
-          trigger: 'hover',
-          clickModeDefaultOpen: true
-        },
-    }),
     cursorEffectsPlugin({
       size: 2,
       shape: 'star',
       zIndex: 999999999
+    }),
+    rightAnchorPlugin({
+      showDepth: 1,
+        expand: {
+          trigger: 'hover',
+          clickModeDefaultOpen: true
+        },
     }),
   ],
   theme: defaultTheme({

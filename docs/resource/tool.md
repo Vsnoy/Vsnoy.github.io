@@ -26,8 +26,14 @@
 - [Excalidraw](https://excalidraw.com/)
 - [画图本](https://huatuben.net/)
 
+## 压缩
+
+- [TinyPNG](https://tinypng.com/)
+- [Squoosh](https://squoosh.app/)
+  
 ## 其他
 
 - [DeepL](https://www.deepl.com/translator)
 - [SM.MS](https://sm.ms/)
+- [Waifu2x](http://waifu2x.udp.jp/)
 - [Code996](https://hellodigua.github.io/code996/)

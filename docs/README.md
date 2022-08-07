@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /header.jpg
+heroImage: /header.png
 heroText: Trauma
 tagline: 人生海海，山山而川，不过尔尔
 footer: <div>© 2022 🧐 Trauma</div>
