@@ -1,7 +1,7 @@
 module.exports = [
   {
     text: "碎片",
-    link: encodeURI("/fe-piece/js")
+    link: encodeURI("/fe-piece/css")
   },
   {
     text: "基础",
@@ -11,6 +11,10 @@ module.exports = [
     text: "框架",
     link: encodeURI("/fe-frame/react/同步异步 & 批处理")
   },
+  // {
+  //   text: "网络",
+  //   link: encodeURI("/network/common-header/Cache-Control")
+  // },
   {
     text: "工程",
     link: encodeURI("/engineer/git/git commit 提交规范")

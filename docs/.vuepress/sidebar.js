@@ -50,6 +50,20 @@ module.exports = {
       ]
     }
   ],
+  "/network/": [
+    {
+      text: "通用头",
+      link: "/network/common-header"
+    },
+    {
+      text: "请求头",
+      link: "/network/request-header"
+    },
+    {
+      text: "响应头",
+      link: "/network/response-header"
+    }
+  ],
   "/engineer/": [
     {
       text: "Git",

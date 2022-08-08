@@ -12,6 +12,8 @@
   - 你不知道的 JavaScript
   - JavaScript 权威指南
   - JavaScript 高级程序设计
+- 网络
+  - 图解 HTTP
 
 ## 速查
 
