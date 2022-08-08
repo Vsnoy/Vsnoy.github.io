@@ -1,1 +1,0 @@
-import{_ as a,o as s,c as t,a as e,e as r}from"./app.10badeee.js";const c={},o=e("h1",{id:"js",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#js","aria-hidden":"true"},"#"),r(" JS")],-1),_=[o];function n(d,i){return s(),t("div",null,_)}var l=a(c,[["render",n],["__file","js.html.vue"]]);export{l as default};
