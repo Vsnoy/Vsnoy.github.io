@@ -50,20 +50,20 @@ module.exports = {
       ]
     }
   ],
-  "/network/": [
-    {
-      text: "通用头",
-      link: "/network/common-header"
-    },
-    {
-      text: "请求头",
-      link: "/network/request-header"
-    },
-    {
-      text: "响应头",
-      link: "/network/response-header"
-    }
-  ],
+  // "/network/": [
+  //   {
+  //     text: "通用头",
+  //     link: "/network/common-header"
+  //   },
+  //   {
+  //     text: "请求头",
+  //     link: "/network/request-header"
+  //   },
+  //   {
+  //     text: "响应头",
+  //     link: "/network/response-header"
+  //   }
+  // ],
   "/engineer/": [
     {
       text: "Git",
@@ -159,6 +159,10 @@ module.exports = {
     {
       text: "工具网站",
       link: encodeURI("/resource/tool")
+    },
+    {
+      text: "文档速查",
+      link: encodeURI("/resource/doc")
     },
     {
       text: "博客搭建",

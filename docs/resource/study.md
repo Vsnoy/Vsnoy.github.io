@@ -15,12 +15,6 @@
 - 网络
   - 图解 HTTP
 
-## 速查
-
-- [CSS 速查表](http://code.ciaoca.com/style/css-cheat-sheet/)
-- [Markdown 速查表](https://markdown.com.cn/cheat-sheet.html)
-- [运算符优先级](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#%E6%B1%87%E6%80%BB%E8%A1%A8)
-
 ## 博客
 
 - [JavaScript Guidebook](https://tsejx.github.io/javascript-guidebook/)

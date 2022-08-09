@@ -30,7 +30,12 @@
 
 - [TinyPNG](https://tinypng.com/)
 - [Squoosh](https://squoosh.app/)
-  
+
+## 转换
+
+- [iLoveIMG](https://www.iloveimg.com/zh-cn)
+- [iLovePDF](https://www.ilovepdf.com/zh-cn)
+
 ## 其他
 
 - [DeepL](https://www.deepl.com/translator)
