@@ -52,6 +52,11 @@ arr.map(function callback(currentValue[,index[, array]]) {
 
 [深入理解 let](https://github.com/gengarneko/blog-vuepress/tree/master/docs/frontEnd/es6)
 
+## call、apply 和 bind
+
+- `call` 、`apply` 调用函数，`bind` 不会调用函数
+- `call` 、`bind` 传参使用逗号隔开，`apply` 传参直接传数组
+
 ## event.target & event.currentTarget
 
 - event.target：事件触发者
@@ -136,3 +141,11 @@ Promise.resolve(v) 与 new Promise(r => r(v)) 不完全等价。
 :::
 
 [从一道题浅说 JavaScript 的事件循环](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
+
+## 判断数组方式
+
+- Array.isArray(arr)
+- arr instanceof Array
+- arr.constructor === Array
+- Object.prototype.toString.call(arr) === '[object Array]'
+- 等等

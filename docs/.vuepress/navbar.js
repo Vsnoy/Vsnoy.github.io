@@ -23,10 +23,10 @@ module.exports = [
     text: "题库",
     link: encodeURI("/question/闭包")
   },
-  {
-    text: "面试",
-    link: encodeURI("/interview/html")
-  },
+  // {
+  //   text: "面试",
+  //   link: encodeURI("/interview/html")
+  // },
   {
     text: "资源",
     link: encodeURI("/resource/study")
