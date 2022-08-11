@@ -1,8 +1,8 @@
-# gitattribute 文件配置
+# gitattributes 文件配置
 
-## 创建 .gitattribute 文件
+## 创建 .gitattributes 文件
 
-在文件夹根目录下手动创建 `.gitattribute` 文件即可。
+在文件夹根目录下手动创建 `.gitattributes` 文件即可。
 
 ## 添加过滤器
 
@@ -32,4 +32,11 @@ git config --global filter._config.smudge cat
 ```
 git config --global filter._config.clean "sed '/\/\/\s#BEGIN/,/\/\/\s#END$/d'"
 git config --global filter._config.smudge cat
+```
+
+## 删除过滤器
+
+```
+git config --global --unset filter._config.clean
+git config --global --unset filter._config.smudge
 ```
