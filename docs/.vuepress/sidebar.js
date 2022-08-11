@@ -76,7 +76,8 @@ module.exports = {
         "/engineer/git/git stash 储藏",
         "/engineer/git/git rebase 合并多个 commit",
         "/engineer/git/gitignore 文件配置",
-        "/engineer/git/常用命令",
+        "/engineer/git/gitattributes 文件配置",
+        "/engineer/git/git 常用命令",
       ]
     },
     {

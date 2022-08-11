@@ -1,10 +1,13 @@
 # gitattributes 文件配置
 
+通过 `.gitignore` 文件，可以忽略特定的文件或文件夹，如果想忽略特定某几行代码呢？  
+那就需要用到 `.gitattributes` 文件结合过滤器来实现了。
+
 ## 创建 .gitattributes 文件
 
 在文件夹根目录下手动创建 `.gitattributes` 文件即可。
 
-## 添加过滤器
+## 添加内容
 
 ```
 *.js filter=_config
@@ -14,7 +17,7 @@
 - filter 表示过滤器
 - _config 表示过滤器名称
 
-## 配置过滤器
+## 添加过滤器
 
 ### 单行忽略
 
@@ -40,3 +43,7 @@ git config --global filter._config.smudge cat
 git config --global --unset filter._config.clean
 git config --global --unset filter._config.smudge
 ```
+
+## 参考
+
+- [gitattributes](https://www.cnblogs.com/layezi/p/16265806.html)
