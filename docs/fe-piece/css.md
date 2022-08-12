@@ -100,3 +100,22 @@ div .green:nth-of-type(1) {
 
 PS: 该方法不兼容 IE
 ```
+
+## 隐藏元素
+
+- display: none  
+  不占位置
+- visibility: hidden  
+  占位置
+- opacity: 0  
+  占位置
+- transform: scale(0)  
+  占位置
+- clip/clip-path  
+  占位置
+- H5 hidden 属性  
+  不占位置
+- position: absolute  
+  绝对定位移出可视区域
+- z-index 负值  
+  其他元素覆盖住该元素

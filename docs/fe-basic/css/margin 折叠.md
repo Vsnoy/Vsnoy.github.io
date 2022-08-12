@@ -1,0 +1,70 @@
+# margin 折叠
+
+`margin` 折叠只会出现在垂直方向上，水平方向上不会出现。折叠有两种表现形式：合并与塌陷。
+
+## margin 合并
+
+```
+<div>
+  <div class="a"></div>
+  <div class="b"></div>
+</div>
+
+.a {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 50px;
+  background-color: pink;
+}
+
+.b {
+  width: 100px;
+  height: 100px;
+  margin-top: 50px;
+  background-color: green;
+}
+```
+
+两盒子之间的垂直间距，实际结果只有 `50px` ，而非想象中的 `100px`。  
+兄弟元素垂直排列，两者之间的间距取的是两者所设置 `margin` 的最大值。
+
+解决方法：其中一个兄弟元素包裹在 `BFC` 中。
+
+## margin 塌陷
+
+```
+<div class="a">
+  <div class="b"></div>
+</div>
+
+.a {
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  background-color: pink;
+}
+
+.b {
+  width: 50px;
+  height: 50px;
+  margin-top: 50px;
+  background-color: green;
+}
+```
+
+父盒子的外边距实际结果是 `50px` ， 而非想象中的 `20px`。  
+父子元素嵌套，外层边距取的是两者所设置 `margin` 的最大值。
+
+解决方法：父元素设置边框；父元素包裹在 `BFC` 中。
+
+:::tip
+垂直方向外边距合并计算
+
+- 两个相邻的外边距都是 **正数** 时，折叠外边距是两者中较大的值。
+- 两个相邻的外边距都是 **负数** 时，折叠外边距是两者中绝对值较大的值。
+- 两个相邻的外边距是 **一正一负** 时，折叠外边距是两者相加的和。
+:::
+
+## 参考
+
+- [margin 折叠：合并和塌陷](https://www.cnblogs.com/jzhFlash/p/16318095.html)

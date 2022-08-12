@@ -2,7 +2,7 @@
 
 ## Flex
 
-flex 布局会使项目的 float、vertical-align、clear 属性失效，不包括项目内的子元素。
+`Flex` 布局会使项目的 `float` 、`vertical-align` 、`clear` 属性失效，不包括项目内的子元素。
 
 - 容器属性
   - flex-direction
@@ -20,6 +20,7 @@ flex 布局会使项目的 float、vertical-align、clear 属性失效，不包�
   - align-self
 
 :::tip
+
 flex 属性值
 
 ```
@@ -43,7 +44,7 @@ flex 属性值
 
 ## Grid
 
-Grid 布局会使项目的 float、vertical-align、display: inline-block 等属性失效。不包括项目内的子元素。
+`Grid` 布局会使项目的 `float` 、`vertical-align` 、`display: inline-block` 等属性失效。不包括项目内的子元素。
 
 - 容器属性
   - grid-template-rows、grid-template-columns、grid-template-areas
@@ -182,10 +183,10 @@ animation: animation-name, animation-duration,              // 常用
 ```
 
 :::tip
-transition 和 animation 属性区别
+`transition` 和 `animation` 属性区别
 
-- transition 是过渡属性。需要触发，并且只有开始和结束的关键两祯
-- animation 是动画属性。不需要触发，可以设置好时间自动开始，并可以定义多帧动画
+- `transition` 是过渡属性。需要触发，并且只有开始和结束的关键两祯
+- `animation` 是动画属性。不需要触发，可以设置好时间自动开始，并可以定义多帧动画
 :::
 
 ## 继承
@@ -210,7 +211,7 @@ transition 和 animation 属性区别
   - 等等
 
 :::tip
-text-，font-，line-以及 color 属性大多可以被继承  
+`text-` 、`font-` 、`line-` 以及 `color` 属性大多可以被继承  
 文本、字体、行高、文字颜色大多可以被继承
 :::
 
@@ -295,11 +296,11 @@ text-，font-，line-以及 color 属性大多可以被继承
 以向下的三角形为例。
 
 ```
-div{
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-top: 20px solid red;
+div {
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top: 20px solid red;
 }
 ```
 
@@ -309,25 +310,26 @@ div{
 以靠左向下的直角三角形为例。
 
 ```
-div{
-    width: 0;
-    height: 0;
-    border-right: 20px solid transparent;
-    border-top: 20px solid red;
+div {
+  width: 0;
+  height: 0;
+  border-right: 20px solid transparent;
+  border-top: 20px solid red;
 }
 ```
 
 ### 扇形
 
-在画常规三角形的基础上加上 border-radius。
+在画常规三角形的基础上加上 `border-radius` 。
 
 ```
-div{
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-top: 20px solid red;
-    border-radius: 50%;
+div {
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top: 20px solid red;
+  border-radius: 50%;
+}
 ```
 
 ### 0.5px 线
@@ -444,20 +446,20 @@ div{
   
 ### 层叠顺序  
 
-在同一层叠上下文中，层叠顺序自下而上依次是：层叠上下文的根、z-index 为负、block、float、inline/inline-block、z-index 为 0 或 auto、z-index 为正。
+在同一层叠上下文中，层叠顺序自下而上依次是：层叠上下文的根、`z-index` 为负、`block` 、`float` 、`inline/inline-block` 、`z-index` 为 `0` 或 `auto` 、`z-index` 为正。
 ![stacking_context](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/stacking_context.png)
   
 ### 层叠准则
 
 - 同一层叠上下文中的元素，按照层叠顺序排列
 - 不同层叠上下文中的元素，按层叠水平进行整体排列
-- 层叠水平与层叠顺序都相同，在 DOM 流中处于后面的元素会覆盖前面的元素
+- 层叠水平与层叠顺序都相同，在 `DOM` 流中处于后面的元素会覆盖前面的元素
 
 ## 块级格式化上下文
 
-BFC，块级格式化上下文，是 CSS 中一种独特的渲染机制。  
+`BFC` ，块级格式化上下文，是 `CSS` 中一种独特的渲染机制。  
 
-可将其理解为一个独立的容器，规定了内部元素如何布局，并且容器内部元素与外部元素之间互不影响。简而言之，它是一块独立的区域，让处于 BFC 内部的元素与外部的元素互相隔离。
+可将其理解为一个独立的容器，规定了内部元素如何布局，并且容器内部元素与外部元素之间互不影响。简而言之，它是一块独立的区域，让处于 `BFC` 内部的元素与外部的元素互相隔离。
 
 ### 产生条件
 
@@ -485,7 +487,7 @@ BFC，块级格式化上下文，是 CSS 中一种独特的渲染机制。
 
 ## 雪碧图
 
-将一个页面涉及到的所有图片都包含到一张大图中去，然后利用 CSS 的 background-image、background-repeat、background-position 组合进行背景定位。
+将一个页面涉及到的所有图片都包含到一张大图中去，然后利用 `CSS` 的 `background-image` 、`background-repeat` 、`background-position` 组合进行背景定位。
 
 优点：
 
@@ -523,26 +525,26 @@ BFC，块级格式化上下文，是 CSS 中一种独特的渲染机制。
 PS: 该方法不兼容 IE
 ```
 
-## margin 塌陷与合并
+## margin 折叠
 
-只有垂直方向上才会出现 margin 塌陷或合并，水平方向上不会出现。
+垂直方向上会出现 `margin` 折叠，水平方向上不会出现。
+
+### margin 合并  
+
+兄弟元素垂直排列，两者之间的间距取的是两者所设置 `margin` 的最大值。
+
+解决方案
+
+- 其中一个兄弟元素包裹在 `BFC` 中
 
 ### margin 塌陷  
 
-父子元素嵌套。外层整体盒模型的 margin-top 取两者中 margin-top 较大的值。
+父子元素嵌套，外层边距取的是两者所设置 `margin-top` 的最大值。
 
 解决方案
 
 - 父元素设置边框
-- 父元素包裹在 BFC 中
-
-### margin 合并  
-
-兄弟元素垂直排列。两者相隔的 margin 取的是两者所设置 margin 的最大值。
-
-解决方案
-
-- 其中一个兄弟元素包裹在 BFC 中
+- 父元素包裹在 `BFC` 中
 
 :::tip
 垂直方向外边距合并计算
@@ -554,8 +556,8 @@ PS: 该方法不兼容 IE
 
 ## rem 和 em 区别
 
-rem 相对于根元素的字号。  
-em 相对于当前元素的字号。1em 等于当前元素字号。
+`rem` 相对于根元素的字号。  
+`em` 相对于当前元素的字号。`1em` 等于当前元素字号。
 
 ```
 <style>

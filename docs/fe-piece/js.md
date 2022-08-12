@@ -77,6 +77,13 @@ arr.map(function callback(currentValue[,index[, array]]) {
 
 [event.target 和 event.currentTarget](https://segmentfault.com/a/1190000003021586)
 
+## typeof & instanceof
+
+- typeof  
+  `null` 、`array` 会被判别为 `object` ，其他判断无误
+- instanceof  
+  只能用于判断引用数据类型，不可用于基本数据类型
+
 ## Object.is 和 ===
 
 主要在于对 `NaN` 和 `±0` 的处理不同。
