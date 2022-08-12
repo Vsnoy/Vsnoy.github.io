@@ -35,6 +35,7 @@ module.exports = {
         "/fe-basic/js/词法作用域",
         "/fe-basic/js/事件循环",
         "/fe-basic/js/节流防抖",
+        "/fe-basic/js/深浅拷贝",
         "/fe-basic/js/this 指向",
         "/fe-basic/js/new 执行过程",
       ]
