@@ -18,8 +18,10 @@ module.exports = {
       text: "CSS",
       collapsible: true,
       children: [
+        "/fe-basic/css/文档流",
         "/fe-basic/css/盒子模型",
-        "/fe-basic/css/margin 折叠",
+        "/fe-basic/css/属性继承",
+        "/fe-basic/css/外边距折叠",
         "/fe-basic/css/层叠上下文",
         "/fe-basic/css/块级格式化上下文",
       ]

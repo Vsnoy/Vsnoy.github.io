@@ -200,7 +200,7 @@ animation: animation-name, animation-duration,              // 常用
   - 定位属性  
     float、position、top、right、bottom、left、overflow、z-index 等
   - 盒子模型属性  
-    width、height、margin、border、padding
+    width、height、margin、padding、border
   - 等等
 - 有继承性的属性
   - visibility
@@ -457,9 +457,8 @@ div {
 
 ## 块级格式化上下文
 
-`BFC` ，块级格式化上下文，是 `CSS` 中一种独特的渲染机制。  
-
-可将其理解为一个独立的容器，规定了内部元素如何布局，并且容器内部元素与外部元素之间互不影响。简而言之，它是一块独立的区域，让处于 `BFC` 内部的元素与外部的元素互相隔离。
+块级格式化上下文（ `BFC` ），是一块独立的渲染区域。
+规定了内部元素如何布局，并且内部元素与外部元素之间相互隔离，互不影响。
 
 ### 产生条件
 
