@@ -22,6 +22,7 @@ module.exports = {
         "/fe-basic/css/盒子模型",
         "/fe-basic/css/属性继承",
         "/fe-basic/css/外边距折叠",
+        "/fe-basic/css/水平垂直居中",
         "/fe-basic/css/层叠上下文",
         "/fe-basic/css/块级格式化上下文",
       ]
@@ -155,7 +156,11 @@ module.exports = {
       link: encodeURI("/interview/js")
     },
     {
-      text: "react",
+      text: "Vue",
+      link: encodeURI("/interview/vue")
+    },
+    {
+      text: "React",
       link: encodeURI("/interview/react")
     },
   ],
