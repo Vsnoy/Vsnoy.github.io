@@ -163,6 +163,22 @@ module.exports = {
       text: "React",
       link: encodeURI("/interview/react")
     },
+    {
+      text: "Vue & React",
+      link: encodeURI("/interview/vue & react")
+    },
+    {
+      text: "网络",
+      link: encodeURI("/interview/网络")
+    },
+    {
+      text: "浏览器",
+      link: encodeURI("/interview/浏览器")
+    },
+    {
+      text: "数据交互",
+      link: encodeURI("/interview/数据交互")
+    },
   ],
   "/resource/": [
     {

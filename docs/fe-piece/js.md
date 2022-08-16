@@ -77,6 +77,12 @@ arr.map(function callback(currentValue[,index[, array]]) {
 
 [event.target 和 event.currentTarget](https://segmentfault.com/a/1190000003021586)
 
+## event.preventDefault 和 event.stopPropagation
+
+- event.preventDefault：阻止浏览器默认行为
+- event.stopPropagation：阻止事件冒泡
+- return false：既阻止浏览器默认行为，又阻止事件冒泡
+
 ## typeof & instanceof
 
 - typeof  

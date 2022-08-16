@@ -186,32 +186,6 @@ Vue2 缺点
   - 对数组 length 的修改
   :::
 
-### 对 MVVM 的理解
-
-- Model：代表数据模型，数据和业务逻辑都在 Model 层中定义
-- View：代表 UI 视图，负责数据的展示
-- ViewModel：负责监听 Model 中数据的改变并且控制视图的更新，处理用户交互操作
-
-```
-<body>
-  <!-- Vue 实例控制的这个元素区域，就是 MVVM 的 V-->
-  <div id ="app">
-    <p>{{ msg }}</p>
-  </div>
-
-  <script>
-    // 创建一个 Vue 的实例。vm 对象，就是 MVVM 中的 VM。
-    var vm = new Vue({
-      el: '#app', 
-      // data 就是 MVVM 中的 M 
-      data:{ 
-        msg: '欢迎学习 Vue' 
-      }
-    });
-  </script>
-</body>
-```
-
 ### methods、computed、watch 区别
 
 - methods  
