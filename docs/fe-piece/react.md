@@ -25,6 +25,26 @@
 - `React` 本身执行的过程和代码都是同步的，只是合成事件和生命周期钩子函数的调用顺序在更新之前，导致在合成事件和钩子函数中没法立马拿到更新后的值，就是我们所说的异步了。
 - 更新 DOM 之前一定会重渲染，但重渲染不代表一定会更新 DOM，二者不等价。
 
+## JSX & React.createElement
+
+```
+// JSX 形式
+<div>
+  <button onClick={this.handleClick}>点击</button>
+</div>
+
+// React.createElement 形式
+React.createElement(
+  "div", 
+  null, 
+  React.createElement(
+    "button", 
+    { onClick: this.handleClick }, 
+    "点击"
+  )
+)
+```
+
 ## 类组件事件绑定 this 的四种方式
 
 ```

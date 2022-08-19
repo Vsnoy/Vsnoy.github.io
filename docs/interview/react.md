@@ -152,7 +152,7 @@ const ref = React.createRef()
 
 ### 事件机制与合成事件
 
-`React` 基于浏览器的事件机制，自身实现了一套事件机制，包括事件注册、事件合成、事件冒泡、事件派发等。在 `React` 中，这套事件机制被称之为合成事件。
+`React` 基于浏览器的事件机制，自身实现了一套事件机制，包括事件注册、事件合成、事件冒泡、事件分发等。在 `React` 中，这套事件机制被称之为合成事件。
 
 合成事件，是 `React` 模拟原生 DOM 事件所有能力的一个对象，它根据 W3C 标准定义事件，兼容所有浏览器，拥有与原生事件相同的接口。
 
@@ -161,7 +161,7 @@ const ref = React.createRef()
 ### 合成事件与原生事件区别
 
 - 对于事件名称命名方式，原生事件为全小写，合成事件采用小驼峰
-- 对于事件函数处理语法，原生事件使用引号调用函数，合成事件使用大括号调用函数
+- 对于事件函数处理语法，原生事件使用引号，合成事件使用大括号
 - 对于阻止浏览器的默认行为，原生事件使用 return false，合成事件采用 event.prenventDefault()
 
 ### setState 执行机制
@@ -203,7 +203,7 @@ eventBus.emit('sayHello', 'Hello React')
 
 组件 B （接收事件）
 eventBus.addListener('sayHello', (msg) => {
-	console.log(msg)
+  console.log(msg)
 })
 ```
 
@@ -217,23 +217,29 @@ const context = React.createContext()
   <Child />
 </context.Provider>
 
-子孙组件 （接收方式二）:
+子孙组件（接收方式一）:
 static contextType = context
 
 <div>{this.context.name}</div>
 <button onClick={this.context.callback.bind(this, 'violet')}>点击</button>
 
-子孙组件 （接收方式二）:
+子孙组件（接收方式二）:
 <context.Consumer>
-{
+  {
     value => (
       <div>
         <div>{value.name}</div>
         <button onClick={value.callback.bind(this, 'violet')}>点击</button>
       </div>
     )
-}
+  }
 </context.Consumer>
+
+子孙组件（接收方式三）
+const value = useContext(context)
+
+<div>{value.name}</div>
+<button onClick={value.callback.bind(this, 'violet')}>点击</button>
 ```
 
 - Mobx

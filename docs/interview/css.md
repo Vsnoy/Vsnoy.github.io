@@ -442,9 +442,11 @@ div {
 
 ### 层叠水平  
 
-决定了在同一个层叠上下文中，元素在 z 轴上的显示顺序
+决定了在同一个层叠上下文中，元素在 z 轴上的显示顺序，就像桌子上纸张的顺序、信封里信纸的顺序。
   
 ### 层叠顺序  
+
+层叠水平只是一个概念，那么我们根据什么来判定元素的层叠水平呢？那就是层叠顺序。
 
 在同一层叠上下文中，层叠顺序自下而上依次是：层叠上下文的根、`z-index` 为负、`block` 、`float` 、`inline/inline-block` 、`z-index` 为 `0` 或 `auto` 、`z-index` 为正。
 ![stacking_context](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/stacking_context.png)
@@ -474,7 +476,7 @@ div {
 ### 渲染规则
 
 - BFC 元素内部的浮动元素会参与高度计算（可用于清除浮动）
-- BFC 元素内部的父子或兄弟元素垂直方向上会产生 margin 合并（可用于防止 margin 塌陷与合并）
+- BFC 元素内部的父子或兄弟元素垂直方向上会产生 margin 折叠（可用于防止 margin 折叠）
 - BFC 元素不会和浮动元素重叠（可用于两栏布局）
 - BFC 元素内部元素与外部元素相互隔离，互不影响
 

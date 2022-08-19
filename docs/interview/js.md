@@ -99,7 +99,7 @@ function debounce(fn, wait) {
 
 - 浅拷贝
   - 扩展运算符
-  - Object.assing
+  - Object.assign
   - Array.prototype.slice
   - Array.prototype.concat
 - 深拷贝
@@ -121,6 +121,8 @@ function shallowCopy(obj) {
       newObj[key] = obj[key]
     }
   }
+
+  return newObj
 }
 ```
 
@@ -139,6 +141,8 @@ function deepCopy(obj) {
       newObj[key] = typeof obj[key] === 'object' ? deepCopy(obj[key]) : obj[key]
     }
   }
+
+  return newObj
 }
 ```
 

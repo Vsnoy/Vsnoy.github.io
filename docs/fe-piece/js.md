@@ -57,6 +57,13 @@ arr.map(function callback(currentValue[,index[, array]]) {
 - `call` 、`apply` 调用函数，`bind` 不会调用函数
 - `call` 、`bind` 传参使用逗号隔开，`apply` 传参直接传数组
 
+## onclick & addEventListener
+
+- onclick 不能同时执行两个函数，而 addEventListener 可以
+- onclick 只能冒泡阶段触发，而 addEventListener 捕获和冒泡阶段皆可
+- onclick 移除事件侦听直接覆盖即可，而 addEventListener 需要使用 removeEventListener 移除
+- onclick 支持 IE 低版本，addEventListener 不支持 IE8 以下，低版本 IE 使用 attachEvent 进行事件侦听
+
 ## event.target & event.currentTarget
 
 - event.target：事件触发者
@@ -77,11 +84,16 @@ arr.map(function callback(currentValue[,index[, array]]) {
 
 [event.target 和 event.currentTarget](https://segmentfault.com/a/1190000003021586)
 
-## event.preventDefault 和 event.stopPropagation
+## event.preventDefault & event.stopPropagation
 
 - event.preventDefault：阻止浏览器默认行为
-- event.stopPropagation：阻止事件冒泡
-- return false：既阻止浏览器默认行为，又阻止事件冒泡
+- event.stopPropagation：阻止事件冒泡或捕获
+- event.stopImmediatePropagation: 除可阻止事件冒泡或捕获外，还可阻止事件的其他监听器
+- return false：既阻止浏览器默认行为，又阻止事件冒泡或捕获
+
+## 事件捕获 & 事件冒泡
+
+![event_capture&event_bubble](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/event_capture&event_bubble.jpg)
 
 ## typeof & instanceof
 
