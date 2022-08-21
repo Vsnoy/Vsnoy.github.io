@@ -9,7 +9,7 @@ module.exports = [
   },
   {
     text: "框架",
-    link: encodeURI("/fe-frame/react/同步异步 & 批处理")
+    link: encodeURI("/fe-frame/react/重渲染")
   },
   // {
   //   text: "网络",
