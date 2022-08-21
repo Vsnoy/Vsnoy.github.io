@@ -56,6 +56,7 @@ module.exports = {
         "/fe-frame/react/事件机制",
         "/fe-frame/react/同步异步 & 批处理",
         "/fe-frame/react/立即计算 & 懒计算",
+        "/fe-frame/react/useContext + useReducer 代替 Redux",
       ]
     }
   ],
