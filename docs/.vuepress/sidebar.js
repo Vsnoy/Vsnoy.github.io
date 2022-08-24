@@ -52,6 +52,7 @@ module.exports = {
       text: "React",
       collapsible: true,
       children: [
+        "/fe-frame/react/竞态",
         "/fe-frame/react/重渲染",
         "/fe-frame/react/事件机制",
         "/fe-frame/react/同步异步 & 批处理",

@@ -45,6 +45,36 @@ React.createElement(
 )
 ```
 
+## useEffect & 生命周期
+
+- useEffect 模拟 componentDidMount
+
+  ```
+  useEffect(() => {}, [])
+  ```
+
+- useEffect 模拟 componentDidUpdate
+
+  ```
+  const flag = useRef(true)
+
+  useEffect(() => {
+    if (flag.current) {
+      flag.current = false
+    } else {
+      ...
+    }
+  }, [])
+  ```
+
+- useEffect 模拟 componentWillUnmount
+
+  ```
+  useEffect(() => {
+    return () => {}
+  }, [])
+  ```
+
 ## 类组件事件绑定 this 的四种方式
 
 ```

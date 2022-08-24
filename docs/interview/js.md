@@ -1,5 +1,47 @@
 # JS
 
+## 数组去重
+
+- Set
+
+```
+[...new Set(arr)]
+Array.from(new Set(arr))
+```
+
+- 双层 for 循环
+
+```
+for (const i = 0; i < arr.length; i++) {
+  for (const j = i + 1; j < arr.length; j++) {
+    if (arr[i] == arr[j]) {
+      arr.splice(j, 1)
+
+      // 去重后会改变数组长度，所以要将数组长度 arr.length 和下标 j 减一
+      arr.length--
+      j--
+    }
+  }
+}
+```
+
+- filter + indexOf
+
+```
+// 利用 indexOf 返回指定值第一次出现的索引的索引，若后面发现 indexOf 返回值和元素自身索引对不上，就去重
+arr.filter((item, index, array) => array.indexOf(item) === index)
+```
+
+- filter + Object 键值对
+
+```
+// 利用一个空对象，将数组值依次存入对象，若存的时候发现对象中已经有该值了，就去重
+// 对象属性都是字符串，通过 typeof item + item，来将数字拼成字符串，防止误差
+// 赋值语句返回值是等号右边的值
+const obj = {}
+array.filter((item) => obj.hasOwnProperty(typeof item + item) ? false : (obj[typeof item + item] = true)
+```
+
 ## 判断数组方式
 
 - Array.isArray(arr)

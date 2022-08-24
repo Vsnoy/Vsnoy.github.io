@@ -218,12 +218,6 @@ const context = React.createContext()
 </context.Provider>
 
 子孙组件（接收方式一）:
-static contextType = context
-
-<div>{this.context.name}</div>
-<button onClick={this.context.callback.bind(this, 'violet')}>点击</button>
-
-子孙组件（接收方式二）:
 <context.Consumer>
   {
     value => (
@@ -235,7 +229,7 @@ static contextType = context
   }
 </context.Consumer>
 
-子孙组件（接收方式三）
+子孙组件（接收方式二）
 const value = useContext(context)
 
 <div>{value.name}</div>

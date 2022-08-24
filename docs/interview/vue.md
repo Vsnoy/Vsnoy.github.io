@@ -14,10 +14,10 @@
 - mounted
 - beforeUpdate
 - updated
-- activated
-- deactivated
 - beforeDestory
 - detoryed
+- activated
+- deactivated
 
 在 `created` 、`beforeMount` 、`mounted` 阶段可进行异步请求。  
 在 `mounted` 阶段可操作 `DOM`。
@@ -804,3 +804,6 @@ export default {
 | beforeUpdate  | onBeforeUpdate  |
 | updated       | onUpdated       |
 | beforeDestory | onBeforeUnmount |
+| destoryed | onUnMounted |
+| activated | onActivated |
+| deactivated | onDeactivated |

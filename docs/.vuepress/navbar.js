@@ -9,7 +9,7 @@ module.exports = [
   },
   {
     text: "框架",
-    link: encodeURI("/fe-frame/react/重渲染")
+    link: encodeURI("/fe-frame/react/竞态")
   },
   // {
   //   text: "网络",

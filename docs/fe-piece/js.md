@@ -174,3 +174,9 @@ Promise.resolve(v) 与 new Promise(r => r(v)) 不完全等价。
 - arr.constructor === Array
 - Object.prototype.toString.call(arr) === '[object Array]'
 - 等等
+
+## 数组 & 链表
+
+- 数组静态分配内存，链表动态分配内存
+- 数组在内存中连续，链表不连续
+- 数组元素在栈区，链表元素在堆区
