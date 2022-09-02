@@ -6,7 +6,7 @@
 git checkout <branch>
 ```
 
-## 基于该分支创建新分支并切换到新分支
+## 基于该分支创建新分支并切换
 
 ```
 git checkout -b <branch>
