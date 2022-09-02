@@ -76,6 +76,57 @@ div .green:nth-of-type(1) {
 [nth-of-type 详解](https://juejin.cn/post/6844904174937866247)  
 [:first-of-type 的误用](https://liyucang-git.github.io/2019/07/16/first-of-type%E7%9A%84%E8%AF%AF%E7%94%A8/)
 
+## margin 负值
+
+```
+<div class="a"></div>
+<div class="b"></div>
+
+.a {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  margin-bottom: -50px;
+}
+
+.b {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  opacity: 0.5;
+
+  // margin-top: -50px;
+}
+```
+
+![margin_nagative_value_01](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/margin_nagative_value_01.png)
+
+```
+<div class="a"></div>
+<div class="b"></div>
+
+.a {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  float: left;
+  
+  margin-right: -50px;
+}
+
+.b {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  opacity: 0.5;
+  float: left;
+  
+  // margin-left: -50px;
+}
+```
+
+![margin_nagative_value_02](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/margin_nagative_value_02.png)
+
 ## 文本溢出隐藏
 
 ### 单行文本

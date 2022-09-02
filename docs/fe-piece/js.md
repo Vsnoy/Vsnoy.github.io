@@ -180,3 +180,21 @@ Promise.resolve(v) 与 new Promise(r => r(v)) 不完全等价。
 - 数组静态分配内存，链表动态分配内存
 - 数组在内存中连续，链表不连续
 - 数组元素在栈区，链表元素在堆区
+
+## click/dblclick 单双击点击事件冲突
+
+`click` 事件延迟执行，`dblclick` 时取消 `click` 延时。
+
+```
+let timer
+
+document.querySelector('div').addEventListener('click', () => {
+  clearTimeout(timer) 
+  timer = setTimeout(() => console.log('单击'), 400)
+})
+
+document.querySelector('div').addEventListener('dblclick', () => {
+  clearTimeout(timer) 
+  console.log('双击')
+})
+```

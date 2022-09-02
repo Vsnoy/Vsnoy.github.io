@@ -16,3 +16,13 @@ git config --global xxx xxx
 // 删除配置
 git config --global --unset xxx
 ```
+
+## 分支
+
+```
+// 切换分支
+git checkout <branch>
+
+// 创建分支并切换到该分支
+git checkout -b <branch>
+```
