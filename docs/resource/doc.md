@@ -19,6 +19,7 @@
 - [Axios](https://axios-http.com/zh/docs/intro)
 - [Vite](https://cn.vitejs.dev/)
 - [Webpack](https://www.webpackjs.com/)
+- [ESLint](https://cn.eslint.org/)
 
 ## 速查
 

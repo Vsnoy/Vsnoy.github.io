@@ -13,6 +13,10 @@ module.exports = {
       link: encodeURI("/fe-piece/react")
     },
     {
+      text: 'State',
+      link: encodeURI("/fe-piece/state")
+    },
+    {
       text: 'Other',
       link: encodeURI("/fe-piece/other")
     },
