@@ -39,33 +39,18 @@ ignore*
 !ignore
 ```
 
-## 检查 check-ignore
+:::tip
+`.gitignore` 只能忽略那些原来没有被 `track` 的文件，如果某些文件已经被纳入了版本管理中，则修改 `.gitignore` 是无效的。
+
+解决方法如下：
 
 ```
-# https://git-scm.com/docs/git-check-ignore
-git check-ignore test.txt
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
 ```
 
-## 配置全局 git ignore
-
-```
-# install touch-cli
-# https://www.npmjs.com/package/touch-cli
-npm install touch-cli -g
-
-# 根目录，如 C:\Users\xxx
-# 创建 .gitignore-global 文件
-touch .gitignore-global
-# output: Touching .gitignore-global
-# directory: C:\Users\xxx\.gitignore-global
-
-# 将其添加至 Git 配置
-git config --global core.excludesfile .gitignore-global
-
-# 检查当前全局 excludesfile
-git config --get core.excludesfile
-# output: .gitignore-global
-```
+:::
 
 ## 参考
 
