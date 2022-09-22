@@ -76,6 +76,12 @@ div .green:nth-of-type(1) {
 [nth-of-type 详解](https://juejin.cn/post/6844904174937866247)  
 [:first-of-type 的误用](https://liyucang-git.github.io/2019/07/16/first-of-type%E7%9A%84%E8%AF%AF%E7%94%A8/)
 
+## flex-basis 和 width 优先级
+
+max-width/min-width > flex-basis > width
+
+[width 与 flex-basis 区别](https://juejin.cn/post/6844903914148462599)
+
 ## margin 负值
 
 ```
