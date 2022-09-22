@@ -107,6 +107,8 @@ module.exports = {
         "/engineer/node/n 管理版本",
         "/engineer/node/nvm 管理版本",
         "/engineer/node/nrm 切换镜像源",
+        "/engineer/node/npm 包打补丁",
+        "/engineer/node/npm 安装依赖后缀",
       ]
     },
     {

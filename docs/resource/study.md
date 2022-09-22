@@ -41,6 +41,7 @@
 - Vue
   - [Vue 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
   - [Vue3 源码解读](https://wjchumble.github.io/explain-vue3/)
+  - [Vue3 源码解析](https://diy4869.github.io/vue-next-analysis/)
 - React
   - [React 技术揭秘](https://react.iamkasong.com/)
   - [图解 React 原理系列](https://7kms.github.io/react-illustration-series/)
