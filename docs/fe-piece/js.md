@@ -46,6 +46,25 @@ arr.map(function callback(currentValue[,index[, array]]) {
   - `array`: 被调用的数组。
 - `thisArg`: 执行 `callback` 函数时使用的 `this` 值。
 
+## DOM 操作
+
+### 获取元素
+
+```
+document.getElementById()
+document.getElementsByTagName()
+document.getElementsByClassName()
+document.querySelector()
+document.querySelectorAll()
+```
+
+### 动态添加删除类名
+
+```
+xxx.classList.add()
+xxx.classList.remove()
+```
+
 ## var、let 及 const
 
 ![var_let_const](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/var_let_const.jpg)
