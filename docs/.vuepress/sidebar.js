@@ -91,6 +91,7 @@ module.exports = {
         "/engineer/git/git commit 提交规范",
         "/engineer/git/git log 简洁模式",
         "/engineer/git/git 版本回退",
+        "/engineer/git/git 分支合并",
         "/engineer/git/git 设置代理",
         "/engineer/git/git stash 储藏",
         "/engineer/git/git rebase 合并多个 commit",

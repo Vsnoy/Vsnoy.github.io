@@ -20,7 +20,7 @@
 - 有效期
   - `Cookie` 仅在设置的过期时间之前有效
   - `LocalStorage` 永久保存，除非手动清除
-  - `SessionStorage` 仅在当前会话下有效，关闭页面或浏览器后被清除
+  - `SessionStorage` 仅在当前页面下有效，关闭当前页面或浏览器后被清除
 - 存储大小
   - `Cookie` 4K 左右
   - `LocalStorage` 5M 左右

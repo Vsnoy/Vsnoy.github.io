@@ -20,7 +20,10 @@ git config --global --unset xxx
 ## 分支
 
 ```
-// 查看分支
+// 查看本地所有分支
+git branch
+
+// 查看本地和远程所有分支
 git branch -a
 
 // 切换分支
@@ -37,4 +40,14 @@ git branch -d <branch>
 
 // 删除远程分支
 git push origin --delete <branch>
+```
+
+## 挑选合并
+
+```
+// 合并某个提交
+git cherry-pick <hash>
+
+// 合并某几个提交
+git cherry-pick <hash-1> <hash-2>
 ```
