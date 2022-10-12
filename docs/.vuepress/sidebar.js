@@ -94,6 +94,7 @@ module.exports = {
         "/engineer/git/git 分支合并",
         "/engineer/git/git 设置代理",
         "/engineer/git/git stash 储藏",
+        "/engineer/git/git tag 打标签",
         "/engineer/git/git rebase 合并多个 commit",
         "/engineer/git/git 基于某分支创建新分支",
         "/engineer/git/gitignore 文件配置",

@@ -42,14 +42,39 @@ git branch -d <branch>
 git push origin --delete <branch>
 ```
 
+## 标签
+
+```
+// 查看标签
+git tag
+
+// 给某个提交打标签
+git tag <tag name> <commit>
+
+// 给某个提交打标签并附上说明
+git tag -a <tag name> -m <tag description> <commit>
+
+// 推送本地指定标签到远程
+git push origin <tag name>
+
+// 推送本地所有标签到远程
+git push origin --tags
+
+// 删除本地标签
+git tag -d <tag name>
+
+// 删除远程标签
+git push origin --delete tag <tag name>
+```
+
 ## 其他
 
 ```
 // 合并某个提交
-git cherry-pick <hash>
+git cherry-pick <commit>
 
 // 合并某几个提交
-git cherry-pick <hash-1> <hash-2>
+git cherry-pick <commit-1> <commit-2>
 ```
 
 ## 参考

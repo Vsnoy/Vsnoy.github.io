@@ -18,10 +18,10 @@ git merge --squash <branch>
 
 ```
 // 合并某个提交
-git cherry-pick <hash>
+git cherry-pick <commit>
 
 // 合并某几个提交
-git cherry-pick <hash-1> <hash-2>
+git cherry-pick <commit-1> <commit-2>
 ```
 
 如果 `cherry-pick` 了重复的提交导致报错，可使用以下命令。

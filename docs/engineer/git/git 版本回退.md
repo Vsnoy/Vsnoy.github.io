@@ -9,7 +9,7 @@ git reset --hard HEAD~n
 
 git reset --hard HEAD^..
 
-git reset --hard <hash>
+git reset --hard <commit>
 ```
 
 ```
@@ -25,7 +25,7 @@ git revert HEAD~n
 
 git revert HEAD^..
 
-git revert <hash>
+git revert <commit>
 ```
 
 ```
