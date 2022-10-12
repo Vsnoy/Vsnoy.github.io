@@ -42,7 +42,7 @@ git branch -d <branch>
 git push origin --delete <branch>
 ```
 
-## 挑选合并
+## 其他
 
 ```
 // 合并某个提交
@@ -51,3 +51,7 @@ git cherry-pick <hash>
 // 合并某几个提交
 git cherry-pick <hash-1> <hash-2>
 ```
+
+## 参考
+
+- [git cherry-pick 教程](https://www.ruanyifeng.com/blog/2020/04/git-cherry-pick.html)
