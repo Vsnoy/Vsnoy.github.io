@@ -37,6 +37,12 @@
 - [iLoveIMG](https://www.iloveimg.com/zh-cn)
 - [iLovePDF](https://www.ilovepdf.com/zh-cn)
 
+## 正则
+
+- [Regex101](https://regex101.com/)
+- [Regexper](https://regexper.com/)
+- [Regulex](https://jex.im/regulex/)
+
 ## 其他
 
 - [DeepL](https://www.deepl.com/translator)
