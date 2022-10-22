@@ -1,5 +1,20 @@
 # CSS
 
+## zoom & scale
+
+- `zoom`
+  - 缩放时改变元素占据的空间大小
+  - 缩放位置相对于左上角缩放
+  - 对文字等比缩放，最小缩放到 12px
+  - 会引起整个页面重新渲染
+- `scale`
+  - 缩放时不改变元素占据的空间大小
+  - 缩放位置默认相对于中心缩放
+  - 对文字等比缩放，无限制
+  - 会在当前元素上重绘
+
+[zoom 和 scale 区别](https://owen027.github.io/2019/06/17/zoomAndScale/)
+
 ## nth-child & nth-of-type
 
 ### nth-child

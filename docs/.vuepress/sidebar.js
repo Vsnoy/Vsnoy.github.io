@@ -214,5 +214,9 @@ module.exports = {
       text: "博客搭建",
       link: encodeURI("/resource/blog")
     },
+    {
+      text: "开发规范",
+      link: encodeURI("/resource/standard")
+    }
   ]
 }
