@@ -17,6 +17,10 @@ module.exports = {
       link: encodeURI("/fe-piece/state")
     },
     {
+      text: 'Regex',
+      link: encodeURI("/fe-piece/regex")
+    },
+    {
       text: 'Other',
       link: encodeURI("/fe-piece/other")
     },

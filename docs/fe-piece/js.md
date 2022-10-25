@@ -222,15 +222,15 @@ document.querySelector('div').addEventListener('dblclick', () => {
 
 | 属性                | 值                                                    |
 | ------------------- | ----------------------------------------------------- |
-| window.url.href     | https://violet.com:8080/rem/index.html?a=1&b=2#shadow |
-| window.url.protocol | https:                                                |
-| window.url.hostname | violet.com                                            |
-| window.url.port     | 8080                                                  |
-| window.url.pathname | /rem/index.html                                       |
-| window.url.search   | ?a=1&b=2                                              |
-| window.url.hash     | #shadow                                               |
-| window.url.host     | violet.com:8080                                       |
-| window.url.origin   | https://violet.com:8080                               |
+| window.location.href     | https://violet.com:8080/rem/index.html?a=1&b=2#shadow |
+| window.location.protocol | https:                                                |
+| window.location.hostname | violet.com                                            |
+| window.location.port     | 8080                                                  |
+| window.location.pathname | /rem/index.html                                       |
+| window.location.search   | ?a=1&b=2                                              |
+| window.location.hash     | #shadow                                               |
+| window.location.host     | violet.com:8080                                       |
+| window.location.origin   | https://violet.com:8080                               |
 
 [JS 如何获取 URL ? 后的参数信息](https://houbb.github.io/2021/11/19/js-tool-url-param)  
 [如何使用 JS 解析 URL](https://segmentfault.com/a/1190000018108589)
