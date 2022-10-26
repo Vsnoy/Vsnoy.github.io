@@ -15,6 +15,8 @@
   - JavaScript 正则迷你书
 - 网络
   - 图解 HTTP
+- 其他
+  - LieBrother 设计模式
 
 ## 博客
 
