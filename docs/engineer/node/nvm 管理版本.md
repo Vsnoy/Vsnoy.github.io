@@ -4,24 +4,27 @@
 
 下载地址：https://github.com/coreybutler/nvm-windows/releases
 
-选择 `nvm-setup.zip` 下载安装
+选择 `nvm-setup.exe` 下载安装
 
 ## 查看版本
 
 ```
+// 查看 nvm 版本
+nvm v
+
+// 查看当前 node 版本
+nvm current
+
+// 查看已安装的 node 版本
 nvm ls
+
+// 查看可下载的 node 版本列表
+nvm ls available
 ```
 
 ## 安装版本
 
 ```
-// 安装最新的长期稳定版
-nvm install --lts
-
-// 安装最新版本
-nvm install node
-
-// 安装指定版本
 nvm install <version>
 ```
 
@@ -35,6 +38,19 @@ nvm uninstall <version>
 
 ```
 nvm use <version>
+```
+
+## 设置代理
+
+```
+// 查看代理
+nvm proxy
+
+// 设置代理
+nvm proxy http://127.0.0.1:7890
+
+// 删除代理
+nvm proxy none
 ```
 
 ## 参考
