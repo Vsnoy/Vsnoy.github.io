@@ -29,15 +29,24 @@ npm config delete https-proxy
 ## 其他
 
 ```
+// 查看指定包的仓库
+npm repo <package>
+
 // 查看设置列表
 npm config list
 
 // 查看全局安装包
 npm list -g --depth 0
 
+// 版本号更新
+npm version xxx
+
 // 清理缓存
 npm cache clean -f
 
-// 版本号更新
-npm version xxx
+// 删除 node_modules
+rm -rf node_modules
+
+// 删除 node_modules，清理缓存，重新安装
+rm -rf node_modules && npm cache clean -f && npm install
 ```
