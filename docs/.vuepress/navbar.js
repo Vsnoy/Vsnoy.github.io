@@ -11,10 +11,6 @@ module.exports = [
     text: "框架",
     link: encodeURI("/fe-frame/react/重渲染")
   },
-  // {
-  //   text: "网络",
-  //   link: encodeURI("/network/common-header/Cache-Control")
-  // },
   {
     text: "工程",
     link: encodeURI("/engineer/git/git commit 提交规范")
