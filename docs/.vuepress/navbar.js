@@ -19,8 +19,12 @@ module.exports = [
     text: "题库",
     link: encodeURI("/question/闭包")
   },
+  process.env.NODE_ENV === 'development' && {
+    text: "面试",
+    link: encodeURI("/interview/html")
+  },
   {
     text: "资源",
     link: encodeURI("/resource/study")
   },
-]
+].filter(Boolean)
