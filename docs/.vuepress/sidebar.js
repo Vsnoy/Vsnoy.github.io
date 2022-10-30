@@ -1,6 +1,10 @@
 module.exports = {
   "/fe-piece/": [
     {
+      text: 'HTML',
+      link: encodeURI("/fe-piece/html")
+    },
+    {
       text: 'CSS',
       link: encodeURI("/fe-piece/css")
     },

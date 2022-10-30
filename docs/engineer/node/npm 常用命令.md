@@ -4,6 +4,25 @@
 后面用到就记录下，持续更新。
 :::
 
+## 查看
+
+```
+// 查看指定包的仓库
+npm repo <package>
+
+// 查看设置列表
+npm config list
+
+// 查看全局安装包
+npm list -g --depth 0
+
+// 查看某个依赖的最新版本
+npm view <package> version
+
+// 查看依赖是否过时
+npm outdated
+```
+
 ## 换源
 
 ```
@@ -29,16 +48,7 @@ npm config delete https-proxy
 ## 其他
 
 ```
-// 查看指定包的仓库
-npm repo <package>
-
-// 查看设置列表
-npm config list
-
-// 查看全局安装包
-npm list -g --depth 0
-
-// 版本号更新
+// 更新版本号
 npm version xxx
 
 // 清理缓存
