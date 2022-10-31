@@ -10,9 +10,6 @@
 // 查看指定包的仓库
 npm repo <package>
 
-// 查看设置列表
-npm config list
-
 // 查看全局安装包
 npm list -g --depth 0
 
@@ -23,14 +20,20 @@ npm view <package> version
 npm outdated
 ```
 
-## 换源
+## 配置
 
 ```
-// 查看当前源
-npm config get registry
+// 查看配置列表
+npm config list
 
-// 设置当前源
-npm config set registry <url>
+// 查看某项配置
+npm config get <config>
+
+// 添加或修改某项配置
+npm config set <config> xxx
+
+// 删除某项配置
+npm config delete <config>
 ```
 
 ## 代理

@@ -105,6 +105,8 @@ module.exports = {
         "/engineer/node/nrm 切换镜像源",
         "/engineer/node/npm 包打补丁",
         "/engineer/node/npm 安装依赖后缀",
+        "/engineer/node/npm install 规则",
+        "/engineer/node/避免 package-lock 冲突",
         "/engineer/node/npm 常用命令",
       ]
     },

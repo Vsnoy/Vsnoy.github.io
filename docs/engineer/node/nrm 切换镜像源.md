@@ -49,7 +49,7 @@ nrm delete <registry>
 npm config get registry
 
 // 设置当前镜像源
-npm set registry xxx
+npm set registry <url>
 ```
 
 :::
