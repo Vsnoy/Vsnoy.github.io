@@ -45,6 +45,12 @@ ignore*
 解决方法如下：
 
 ```
+// 针对单个文件
+git rm --cached <file>
+git add <file>
+git commit -m 'update .gitignore'
+
+// 针对所有文件
 git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'

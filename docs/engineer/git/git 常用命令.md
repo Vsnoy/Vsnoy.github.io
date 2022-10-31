@@ -32,6 +32,9 @@ git checkout <branch>
 // 创建分支并切换到该分支
 git checkout -b <branch>
 
+// 切换到最近一次分支
+git checkout -
+
 // 合并分支
 git merge <branch>
 
@@ -40,6 +43,37 @@ git branch -d <branch>
 
 // 删除远程分支
 git push origin --delete <branch>
+```
+
+## 储藏
+
+```
+// 查看储藏列表
+git stash list
+
+// 临时储藏修改
+git stash
+
+// 临时储藏修改，并添加描述信息
+git stash save <message>
+
+// 恢复最后一次储藏
+git stash apply
+
+// 恢复最后一次储藏，并删除该储藏记录
+git stash pop
+
+// 恢复某次储藏
+git stash apply@{num}
+
+// 恢复某次储藏，并删除该储藏记录
+git stash pop stash@{num}
+
+// 删除某个储藏记录
+git stash drop stash@{num}
+
+// 清空所有储藏记录
+git stash clear
 ```
 
 ## 标签

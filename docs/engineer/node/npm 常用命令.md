@@ -48,6 +48,9 @@ npm config delete https-proxy
 ## 其他
 
 ```
+// 安装依赖，并确保一致
+npm ci
+
 // 更新版本号
 npm version xxx
 
