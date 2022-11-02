@@ -234,3 +234,48 @@ document.querySelector('div').addEventListener('dblclick', () => {
 
 [JS 如何获取 URL ? 后的参数信息](https://houbb.github.io/2021/11/19/js-tool-url-param)  
 [如何使用 JS 解析 URL](https://segmentfault.com/a/1190000018108589)
+
+## 图片引入
+
+图片引入分外链引入和本地引入，外链引入没什么好说的，常规引入就行。但本地引入就有说法了。
+当引入本地资源图片时，打包前能正常显示，但打包后图片资源路径会发生变化，这时候就显示不出来了。
+
+解决该问题有两种方法，如下：
+
+```
+// import 引入
+import violet_url from '../images/violet.png'
+
+// require 引入
+const violet_url = require('../images/violet.png')
+```
+
+:::tip
+
+`require` 内容不能是一个纯变量。
+
+```
+// 错误案例
+const url = '../images/violet.png'
+const violet_url = require(url)
+```
+
+`require` 拼接，可包含部分变量。（`RN` 中貌似不支持动态拼接，只能是完整字符串。）
+
+```
+const image_name = 'violet'
+const image_complete_name = 'violet.png'
+
+// 纯字符串
+const violet_url = require('../images/violet.png')  
+
+// 目录 + 文件全名
+const violet_url = require('../images/' + image_complete_name)  
+
+// 目录 + 文件名 + 后缀
+const violet_url = require('../images/' + image_name + '.png') 
+```
+
+:::
+
+[在 React 中使用 require 和 import 语句来导入图片](https://news.sangniao.com/p/3078063580)
