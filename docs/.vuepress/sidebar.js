@@ -1,32 +1,32 @@
 module.exports = {
   "/fe-piece/": [
     {
-      text: 'HTML',
-      link: encodeURI("/fe-piece/html")
+      text: "HTML",
+      link: encodeURI("/fe-piece/html"),
     },
     {
-      text: 'CSS',
-      link: encodeURI("/fe-piece/css")
+      text: "CSS",
+      link: encodeURI("/fe-piece/css"),
     },
     {
-      text: 'JS',
-      link: encodeURI("/fe-piece/js")
+      text: "JS",
+      link: encodeURI("/fe-piece/js"),
     },
     {
-      text: 'React',
-      link: encodeURI("/fe-piece/react")
+      text: "React",
+      link: encodeURI("/fe-piece/react"),
     },
     {
-      text: 'State',
-      link: encodeURI("/fe-piece/state")
+      text: "State",
+      link: encodeURI("/fe-piece/state"),
     },
     {
-      text: 'Regex',
-      link: encodeURI("/fe-piece/regex")
+      text: "Regex",
+      link: encodeURI("/fe-piece/regex"),
     },
     {
-      text: 'Other',
-      link: encodeURI("/fe-piece/other")
+      text: "Other",
+      link: encodeURI("/fe-piece/other"),
     },
   ],
   "/fe-basic/": [
@@ -41,7 +41,7 @@ module.exports = {
         "/fe-basic/css/水平垂直居中",
         "/fe-basic/css/层叠上下文",
         "/fe-basic/css/块级格式化上下文",
-      ]
+      ],
     },
     {
       text: "JS",
@@ -60,8 +60,8 @@ module.exports = {
         "/fe-basic/js/深浅拷贝",
         "/fe-basic/js/this 指向",
         "/fe-basic/js/new 执行过程",
-      ]
-    }
+      ],
+    },
   ],
   "/fe-frame/": [
     {
@@ -74,8 +74,8 @@ module.exports = {
         "/fe-frame/react/同步异步 & 批处理",
         "/fe-frame/react/立即计算 & 懒计算",
         "/fe-frame/react/useContext + useReducer 代替 Redux",
-      ]
-    }
+      ],
+    },
   ],
   "/engineer/": [
     {
@@ -94,7 +94,7 @@ module.exports = {
         "/engineer/git/gitignore 文件配置",
         "/engineer/git/gitattributes 文件配置",
         "/engineer/git/git 常用命令",
-      ]
+      ],
     },
     {
       text: "Node",
@@ -106,114 +106,115 @@ module.exports = {
         "/engineer/node/npm 包打补丁",
         "/engineer/node/npm 安装依赖后缀",
         "/engineer/node/npm install 规则",
-        "/engineer/node/避免 package-lock 冲突",
         "/engineer/node/npm 常用命令",
-      ]
+        "/engineer/node/避免 package-lock 冲突",
+      ],
     },
     {
-      text: "SSH",
+      text: "Other",
       collapsible: true,
       children: [
-        "/engineer/ssh/ssh 连接 github"
-      ]
-    }
+        "/engineer/other/ssh 连接 github",
+        "/engineer/other/linux 常用命令",
+      ],
+    },
   ],
   "/question/": [
     {
-      text: '闭包',
-      link: encodeURI("/question/闭包")
+      text: "闭包",
+      link: encodeURI("/question/闭包"),
     },
     {
-      text: '作用域',
-      link: encodeURI("/question/作用域")
+      text: "作用域",
+      link: encodeURI("/question/作用域"),
     },
     {
-      text: 'this 指向',
-      link: encodeURI("/question/this 指向")
+      text: "this 指向",
+      link: encodeURI("/question/this 指向"),
     },
     {
-      text: '变量提升',
-      link: encodeURI("/question/变量提升")
+      text: "变量提升",
+      link: encodeURI("/question/变量提升"),
     },
     {
-      text: '循环绑定',
-      link: encodeURI("/question/循环绑定")
+      text: "循环绑定",
+      link: encodeURI("/question/循环绑定"),
     },
     {
-      text: '数组去重',
-      link: encodeURI("/question/数组去重")
+      text: "数组去重",
+      link: encodeURI("/question/数组去重"),
     },
     {
-      text: '事件循环',
-      link: encodeURI("/question/事件循环")
+      text: "事件循环",
+      link: encodeURI("/question/事件循环"),
     },
     {
-      text: '引用类型地址',
-      link: encodeURI("/question/引用类型地址")
+      text: "引用类型地址",
+      link: encodeURI("/question/引用类型地址"),
     },
     {
-      text: '其他',
-      link: encodeURI("/question/其他")
+      text: "其他",
+      link: encodeURI("/question/其他"),
     },
   ],
   "/interview/": [
     {
       text: "HTML",
-      link: encodeURI("/interview/html")
+      link: encodeURI("/interview/html"),
     },
     {
       text: "CSS",
-      link: encodeURI("/interview/css")
+      link: encodeURI("/interview/css"),
     },
     {
       text: "JS",
-      link: encodeURI("/interview/js")
+      link: encodeURI("/interview/js"),
     },
     {
       text: "Vue",
-      link: encodeURI("/interview/vue")
+      link: encodeURI("/interview/vue"),
     },
     {
       text: "React",
-      link: encodeURI("/interview/react")
+      link: encodeURI("/interview/react"),
     },
     {
       text: "Vue & React",
-      link: encodeURI("/interview/vue & react")
+      link: encodeURI("/interview/vue & react"),
     },
     {
       text: "网络",
-      link: encodeURI("/interview/网络")
+      link: encodeURI("/interview/网络"),
     },
     {
       text: "浏览器",
-      link: encodeURI("/interview/浏览器")
+      link: encodeURI("/interview/浏览器"),
     },
     {
       text: "数据交互",
-      link: encodeURI("/interview/数据交互")
+      link: encodeURI("/interview/数据交互"),
     },
   ],
   "/resource/": [
     {
       text: "学习资料",
-      link: encodeURI("/resource/study")
+      link: encodeURI("/resource/study"),
     },
     {
       text: "工具网站",
-      link: encodeURI("/resource/tool")
+      link: encodeURI("/resource/tool"),
     },
     {
       text: "文档速查",
-      link: encodeURI("/resource/doc")
+      link: encodeURI("/resource/doc"),
     },
     {
       text: "博客搭建",
-      link: encodeURI("/resource/blog")
+      link: encodeURI("/resource/blog"),
     },
     {
       text: "开发规范",
-      link: encodeURI("/resource/standard")
-    }
-  ]
-}
+      link: encodeURI("/resource/standard"),
+    },
+  ],
+};

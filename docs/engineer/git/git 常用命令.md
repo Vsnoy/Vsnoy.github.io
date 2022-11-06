@@ -113,6 +113,19 @@ git config --global http.proxy socks5://127.0.0.1:7890
 git config --global https.proxy socks5://127.0.0.1:7890
 ```
 
+## 远程仓库
+
+```
+// 查看所有远程仓库
+git remote -v
+
+// 添加远程仓库
+git remote add origin <repo>
+
+// 修改远程仓库地址
+git remote set-url origin <repo>
+```
+
 ## 其他
 
 ```

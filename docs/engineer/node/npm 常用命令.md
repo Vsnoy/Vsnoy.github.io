@@ -51,6 +51,9 @@ npm config delete https-proxy
 ## 其他
 
 ```
+// 初始化 package.json
+npm init -y
+
 // 安装依赖，并确保一致
 npm ci
 
