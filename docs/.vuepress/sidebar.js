@@ -91,7 +91,6 @@ module.exports = {
         "/engineer/git/git tag 打标签",
         "/engineer/git/git rebase 合并多个 commit",
         "/engineer/git/git 基于某分支创建新分支",
-        "/engineer/git/gitignore 文件配置",
         "/engineer/git/gitattributes 文件配置",
         "/engineer/git/git 常用命令",
       ],
@@ -108,6 +107,15 @@ module.exports = {
         "/engineer/node/npm install 规则",
         "/engineer/node/npm 常用命令",
         "/engineer/node/避免 package-lock 冲突",
+      ],
+    },
+    {
+      text: "Config",
+      collapsible: true,
+      children: [
+        "/engineer/config/npmrc 文件配置",
+        "/engineer/config/nvmrc 文件配置",
+        "/engineer/config/gitignore 文件配置",
       ],
     },
     {
