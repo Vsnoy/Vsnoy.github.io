@@ -1,6 +1,6 @@
 # .gitignore 文件配置
 
-`.gitignore` 文件用于统一配置不提交到仓库中的文件。常见配置如下：
+`.gitignore` 文件用于统一配置不提交到仓库中的文件。
 
 ```
 .vscode
