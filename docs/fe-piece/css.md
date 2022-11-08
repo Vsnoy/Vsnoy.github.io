@@ -94,6 +94,7 @@ div .green:nth-of-type(1) {
 
 [nth-of-type 详解](https://juejin.cn/post/6844904174937866247)  
 [:first-of-type 的误用](https://liyucang-git.github.io/2019/07/16/first-of-type%E7%9A%84%E8%AF%AF%E7%94%A8/)
+[nth-of-type 与 nth-child 的区别](https://juejin.cn/post/7055272013018955806#heading-7)
 
 ## flex-basis 和 width 优先级
 

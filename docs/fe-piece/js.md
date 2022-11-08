@@ -65,6 +65,10 @@ xxx.classList.add()
 xxx.classList.remove()
 ```
 
+### new Image() & document.createElement('img')
+
+两者都能创建图片节点，可视为等价。
+
 ## var、let 及 const
 
 ![var_let_const](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/var_let_const.jpg)
