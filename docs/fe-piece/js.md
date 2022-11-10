@@ -48,7 +48,7 @@ arr.map(function callback(currentValue[,index[, array]]) {
 
 ## DOM 操作
 
-### 获取元素
+### 获取节点
 
 ```
 document.getElementById()
@@ -56,6 +56,31 @@ document.getElementsByTagName()
 document.getElementsByClassName()
 document.querySelector()
 document.querySelectorAll()
+```
+
+### 创建节点
+
+```
+document.createElement()
+```
+
+### 添加节点
+
+```
+xxx.appendChild()
+```
+
+### 删除节点
+
+```
+// 删除节点
+xxx.remove()
+
+// 删除节点下的某个子节点
+xxx.removeChild()
+
+// 删除节点下所有子节点
+xxx.innerHTML = ''
 ```
 
 ### 动态添加删除类名
