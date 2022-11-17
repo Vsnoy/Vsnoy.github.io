@@ -46,6 +46,87 @@ arr.map(function callback(currentValue[,index[, array]]) {
   - `array`: 被调用的数组。
 - `thisArg`: 执行 `callback` 函数时使用的 `this` 值。
 
+## 浏览器存储
+
+### localStorage & sessionStorage
+
+```
+localStorage.setItem()
+sessionStorage.setItem()
+
+localStorage.getItem()
+sessionStorage.getItem()
+
+localStorage.removeItem()
+sessionStorage.removeItem()
+
+localStorage.clear()
+sessionStorage.clear()
+```
+
+:::tip
+`localStorage/sessionStorage` 只能存储字符串，无法存储对象数组。
+实在要存需要先转为 `JSON`，以 `localStorage` 为例，如下：
+
+```
+let arr = [1, 2, 3]
+
+localStorage.setItem('arr', JSON.stringify(arr))
+JSON.parse(localStorage.getItem('arr'))
+```
+
+:::
+
+### cookie
+
+```
+const getCookie = (name) => {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([.$?*|{}()[\]\\/+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+```
+
+```
+const setCookie = (name, value, options = {}) => {
+  options = {
+    path: '/',
+    // add other defaults here if necessary
+    ...options
+  };
+
+  if (options.expires instanceof Date) {
+    options.expires = options.expires.toUTCString();
+  }
+
+  let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  for (let optionKey in options) {
+    updatedCookie += "; " + optionKey;
+    let optionValue = options[optionKey];
+    if (optionValue !== true) {
+      updatedCookie += "=" + optionValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+// 使用示例
+setCookie('user', 'John', {secure: true, 'max-age': 3600});
+```
+
+```
+const deleteCookie = (name) => {
+  setCookie(name, "", {
+    'max-age': -1
+  })
+}
+```
+
+[Cookie](https://zh.javascript.info/cookie)
+
 ## DOM 操作
 
 ### 获取节点
@@ -56,6 +137,14 @@ document.getElementsByTagName()
 document.getElementsByClassName()
 document.querySelector()
 document.querySelectorAll()
+
+xxx.children
+xxx.firstElementChild
+xxx.lastElementChild
+
+xxx.childNodes // 包含文本、换行、空格
+xxx.firstChild // 包含文本、换行、空格
+xxx.lastChild // 包含文本、换行、空格
 ```
 
 ### 创建节点
@@ -90,9 +179,68 @@ xxx.classList.add()
 xxx.classList.remove()
 ```
 
+### 动态获取盒子宽高
+
+```
+// 只能获取行内样式设置的宽高，内部和外部样式表的样式取不到。
+// 且该宽高只是设置的宽高，不等于最终渲染后的宽高
+// 比如 box-sizing 为 content-box 时，盒子宽高还受 padding、border 影响
+xxx.style.width
+xxx.style.height
+
+// 获取最终渲染后的宽高（仅 IE 兼容）
+xxx.currentStyle.width
+xxx.currentStyle.height
+
+// 获取最终渲染后的宽高（多浏览器兼容，IE9 以上支持）
+window.getComputedStyle(xxx).width
+window.getComputedStyle(xxx).height
+
+// 获取最终渲染后的宽高（多浏览器兼容，IE9 以上支持。此外还可取到相对于视窗上下左右的距离。）
+xxx.getBoundingClientRect().width
+xxx.getBoundingClientRect().height
+
+// 获取最终渲染后的宽高（最常用，兼容性最好，包括宽高、内边距和边框）
+xxx.offsetWidth
+xxx.offsetHeight
+```
+
 ### new Image() & document.createElement('img')
 
 两者都能创建图片节点，可视为等价。
+
+## DOM 事件
+
+### 鼠标事件
+
+```
+click 点击
+dblclick 双击
+mouseenter 鼠标悬停在元素上
+mouseleave 鼠标离开元素
+mousedown 鼠标按键按下
+mouseup 鼠标按键抬起
+mousemove 鼠标移动
+```
+
+### 键盘事件
+
+```
+keydown 键盘按键按下
+keyup 键盘按键抬起
+keypress 键盘按键按下（仅限于字符按键）
+```
+
+### 表单事件
+
+```
+blur 失焦
+focus 聚焦
+input 输入
+change 输入后失焦
+```
+
+[JS 常用 DOM 事件总结](https://blog.csdn.net/weixin_46534854/article/details/115635532)
 
 ## var、let 及 const
 
@@ -142,6 +290,25 @@ xxx.classList.remove()
 ## 事件捕获 & 事件冒泡
 
 ![event_capture&event_bubble](https://raw.githubusercontent.com/Vsnoy/PicGo/main/VuePress/event_capture&event_bubble.jpg)
+
+## 事件绑定
+
+```
+// 方式一
+<button onclick="handleClick"></button>
+
+// 方式二
+let btn = document.querySelector('button')
+btn.onclick = handleClick
+btn.onclick = null
+
+// 方式三
+let btn = document.querySelector('button')
+btn.addEventListener('click', handleClick)
+btn.removeEventListener('click', handleClick)
+```
+
+[原生绑定事件的三种方式](https://juejin.cn/post/6968278000554999844)
 
 ## typeof & instanceof
 

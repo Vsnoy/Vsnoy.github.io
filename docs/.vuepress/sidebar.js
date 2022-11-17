@@ -204,6 +204,10 @@ module.exports = {
       text: "数据交互",
       link: encodeURI("/interview/数据交互"),
     },
+    {
+      text: "高频面试题",
+      link: encodeURI("/interview/高频面试题"),
+    },
   ],
   "/resource/": [
     {
