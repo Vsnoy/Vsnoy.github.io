@@ -21,6 +21,10 @@
 - [Wormhole](https://wormhole.app/)
 - [Cowtransfer](https://cowtransfer.com/)
 
+## 图床
+
+- [SMMS](https://sm.ms/)
+
 ## 作图
 
 - [ProcessOn](https://www.processon.com/)
@@ -46,6 +50,5 @@
 ## 其他
 
 - [DeepL](https://www.deepl.com/translator)
-- [SM.MS](https://sm.ms/)
 - [Waifu2x](http://waifu2x.udp.jp/)
 - [Code996](https://hellodigua.github.io/code996/)

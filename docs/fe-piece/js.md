@@ -177,6 +177,8 @@ xxx.innerHTML = ''
 ```
 xxx.classList.add()
 xxx.classList.remove()
+xxx.classList.toggle()
+xxx.classList.contains()
 ```
 
 ### 动态获取盒子宽高
@@ -229,6 +231,24 @@ mousemove 鼠标移动
 keydown 键盘按键按下
 keyup 键盘按键抬起
 keypress 键盘按键按下（仅限于字符按键）
+```
+
+### 过渡事件
+
+```
+transitionstart 过渡开始
+transitionend 过渡结束
+transitionrun 过渡中
+transitioncancel 过渡取消
+```
+
+### 动画事件
+
+```
+animationstart 动画开始
+animationend 动画结束
+animationiteration 动画重复播放
+animationcancel 动画取消
 ```
 
 ### 表单事件
