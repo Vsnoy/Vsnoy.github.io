@@ -19,11 +19,7 @@ module.exports = [
     text: "题库",
     link: encodeURI("/question/闭包"),
   },
-  // process.env.NODE_ENV === 'development' && {
-  //   text: "面试",
-  //   link: encodeURI("/interview/html")
-  // },
-  {
+  process.env.NODE_ENV === "development" && {
     text: "面试",
     link: encodeURI("/interview/html"),
   },
