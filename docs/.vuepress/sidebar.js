@@ -116,6 +116,7 @@ module.exports = {
         "/engineer/config/npmrc 文件配置",
         "/engineer/config/nvmrc 文件配置",
         "/engineer/config/gitignore 文件配置",
+        "/engineer/config/editorconfig 文件配置",
         "/engineer/config/browserslistrc 文件配置",
         "/engineer/config/tsconfig.json 文件配置",
       ],
