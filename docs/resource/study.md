@@ -5,20 +5,25 @@
 - CSS
   - 深入解析 CSS
   - CSS 权威指南
-  - CSS 动画 101
 - JS
   - 深入理解 ES6
   - ES6 标准入门  
-  - 现代 JavaScript 教程
   - 你不知道的 JavaScript
   - JavaScript 权威指南
   - JavaScript 高级程序设计
   - JavaScript 设计模式与开发实践
+- 框架
+  - Vue 技术内幕
+  - Vue 设计与实现
+  - React 设计原理
+- 开源书
+  - CSS 动画 101
+  - Defensive CSS
   - JavaScript 正则迷你书
-- 网络
-  - 图解 HTTP
-- 其他
+  - 现代 JavaScript 教程
   - LieBrother 设计模式
+- 掘金小册
+  - JavaScript 函数式编程实践指南
 
 ## 博客
 
@@ -50,9 +55,3 @@
 - React
   - [React 技术揭秘](https://react.iamkasong.com/)
   - [图解 React 原理系列](https://7kms.github.io/react-illustration-series/)
-
-## 其他
-
-- 掘金小册
-- 拉勾专栏
-- 极客专栏

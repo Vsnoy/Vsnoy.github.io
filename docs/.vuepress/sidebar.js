@@ -60,6 +60,7 @@ module.exports = {
         "/fe-basic/js/深浅拷贝",
         "/fe-basic/js/this 指向",
         "/fe-basic/js/new 执行过程",
+        "/fe-basic/js/函数式编程",
       ],
     },
   ],
