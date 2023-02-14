@@ -195,8 +195,8 @@ xxx.currentStyle.width
 xxx.currentStyle.height
 
 // 获取最终渲染后的宽高（多浏览器兼容，IE9 以上支持）
-window.getComputedStyle(xxx).width
-window.getComputedStyle(xxx).height
+xxx.getComputedStyle(xxx).width
+xxx.getComputedStyle(xxx).height
 
 // 获取最终渲染后的宽高（多浏览器兼容，IE9 以上支持。此外还可取到相对于视窗上下左右的距离。）
 xxx.getBoundingClientRect().width
@@ -205,6 +205,32 @@ xxx.getBoundingClientRect().height
 // 获取最终渲染后的宽高（最常用，兼容性最好，包括宽高、内边距和边框）
 xxx.offsetWidth
 xxx.offsetHeight
+```
+
+### 设置样式
+
+```
+xxx.style.xxx
+xxx.setAttribute('style', xxx)
+
+xxx.className
+xxx.classList
+
+xxx.style.getPropertyValue(xxx)
+xxx.style.setProperty(xxx, xxx, xxx)
+xxx.style.removeProperty(xxx)
+```
+
+[JS 设置 CSS 样式](https://blog.csdn.net/weixin_45707610/article/details/126407142)
+
+### 根元素 html
+
+```
+// JS
+document.documentElement
+
+// CSS
+:root {}
 ```
 
 ### new Image() & document.createElement('img')
@@ -306,6 +332,16 @@ change 输入后失焦
 - event.stopPropagation：阻止事件冒泡或捕获
 - event.stopImmediatePropagation: 除可阻止事件冒泡或捕获外，还可阻止事件的其他监听器
 - return false：既阻止浏览器默认行为，又阻止事件冒泡或捕获
+
+## setAttribute & setProperty
+
+- setAttribute: 设置 html 元素属性值
+- setProperty: 设置 css style 样式
+
+```
+xxx.setAttribute()
+xxx.style.setProperty()
+```
 
 ## 事件捕获 & 事件冒泡
 
