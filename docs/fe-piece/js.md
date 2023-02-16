@@ -531,3 +531,11 @@ const violet_url = require('../images/' + image_name + '.png')
 :::
 
 [在 React 中使用 require 和 import 语句来导入图片](https://news.sangniao.com/p/3078063580)
+
+## 生成限定范围内随机数
+
+```
+Math.floor(Math.random() * (max – min + 1)) + min
+```
+
+[JS 生成限定范围内随机数](https://blog.csdn.net/allway2/article/details/122558537)
