@@ -20,6 +20,10 @@ module.exports = [
     link: encodeURI("/question/闭包"),
   },
   process.env.NODE_ENV === "development" && {
+    text: "踩坑",
+    link: encodeURI("/debug/js"),
+  },
+  process.env.NODE_ENV === "development" && {
     text: "面试",
     link: encodeURI("/interview/html"),
   },

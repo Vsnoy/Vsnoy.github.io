@@ -169,6 +169,32 @@ module.exports = {
       link: encodeURI("/question/其他"),
     },
   ],
+  "/debug/": [
+    {
+      text: "CSS",
+      link: encodeURI("/debug/css"),
+    },
+    {
+      text: "JS",
+      link: encodeURI("/debug/js"),
+    },
+    {
+      text: "TS",
+      link: encodeURI("/debug/ts"),
+    },
+    {
+      text: "React",
+      link: encodeURI("/debug/react"),
+    },
+    {
+      text: "React Native",
+      link: encodeURI("/debug/react-native"),
+    },
+    {
+      text: "UniApp",
+      link: encodeURI("/debug/uni-app"),
+    },
+  ],
   "/interview/": [
     {
       text: "HTML",
