@@ -17,11 +17,13 @@
   - Vue 设计与实现
   - React 设计原理
 - 开源书
+  - Hello 算法
   - CSS 动画 101
   - Defensive CSS
   - JavaScript 正则迷你书
   - 现代 JavaScript 教程
   - LieBrother 设计模式
+  - 小林图解计算机基础
 - 掘金小册
   - JavaScript 函数式编程实践指南
 
@@ -36,6 +38,7 @@
 - [余光](https://webbj97.github.io/summary/blog/)
 - [冴羽](https://github.com/mqyqingfeng/Blog)
 - [木易杨](https://muyiy.cn/)
+- [女王控](https://blog.towavephone.com/)
 - [前端日志](https://mengsixing.github.io/)
 
 ## 订阅

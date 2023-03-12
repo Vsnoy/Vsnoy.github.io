@@ -48,121 +48,20 @@
   1. 父组件 componentWillUnmount
   2. 子组件 componentWillUnmount
 
-### 类组件和函数组件区别
+### 受控组件和非受控组件
 
-- 状态  
-  - 类组件可以有自己的状态 State
-  - 函数组件之前没有，现在可以使用 useState 来使用状态
-- 生命周期  
-  - 类组件有自己的生命周期
-  - 函数组件之前没有，现在可以使用 useEffect 来实现类似功能
-- 性能优化  
-  - 类组件可以使用 shouldComponentUpdate 和 React.PureComponent
-  - 函数组件可以使用 React.memo
+- 受控组件：只能通过 React 修改数据或状态的组件，就是受控组件
+- 非受控组件：与受控组件相反，如 input、select 等组件，本身控件自己就能控制数据和状态的变更，而且 React 是不知道这些变更的
 
-### 类组件事件绑定 this 的四种方式
+### 事件机制
 
-```
-// constructor 中使用 bind  
-this.handleClick = this.handleClick.bind(this)
+React 基于浏览器的事件机制，自身实现了一套事件机制，称为合成事件。
+目的是为了实现全浏览器的一致性，抹平不同浏览器之间的差异性。
 
-// 定义处使用类变量语法
-handleClick = () => { ... }
+React v17 之前，是将事件注册在 document 根节点上的，v17 及之后注册在 root 容器节点上。
 
-// render 方法中使用 bind
-<button onClick={this.handleClick.bind(this)}> 点击 </button>
-
-// render 方法中使用箭头函数
-<button onClick={() => {this.handleClick()}}> 点击 </button>
-```
-
-### refs 的四种方式
-
-- 类组件
-
-```
-class MyComponent extends Component {
-  constructor(props) {
-    super(props)
-
-    this.aRef = React.createRef()
-    this.bRef = React.createRef()
-    this.cRef = React.createRef()
-  }
-
-  changeText = () => {
-    this.refs.aRef.innerText = 'Hello, A'
-    this.bRef.current.innerText = 'Hello, B'
-    this.cRef.innerText = 'Hello, C'
-  }
-
-  render() {
-    return (
-      <div>
-        // 传入字符串
-        <div ref="aRef">Hi, A</div>
-        
-        // 传入对象
-        <div ref={this.bRef}>Hi, B</div>
-        
-        // 传入回调函数
-        <div ref={e => this.cRef = e}>Hi, C</div>
-
-        <button onClick={this.changeText}>ref 内容切换</button>
-      </div>
-    )
-  }
-}
-```
-
-- 函数组件
-
-```
-function MyComponent() {
-  const dRef = useRef()
-
-  const changeText = () => {
-    dRef.current.innerText = 'Hello, D'
-  }
-
-  return (
-    <div>
-      // 传入 hooks
-      <div ref={dRef}>Hi, D</div>
-      
-      <button onClick={changeText}>ref 内容切换</button>
-    </div>
-  )
-}
-```
-
-### refs 转发
-
-```
-const FancyButton = React.forwardRef((props, ref) => (
-  <button ref={ref} className="FancyButton">
-    {props.children}
-  </button>
-))
-
-// 你可以直接获取 DOM button 的 ref
-const ref = React.createRef()
-<FancyButton ref={ref}>Click me!</FancyButton>
-```
-
-### 事件机制与合成事件
-
-`React` 基于浏览器的事件机制，自身实现了一套事件机制，包括事件注册、事件合成、事件冒泡、事件分发等。在 `React` 中，这套事件机制被称之为合成事件。
-
-合成事件，是 `React` 模拟原生 DOM 事件所有能力的一个对象，它根据 W3C 标准定义事件，兼容所有浏览器，拥有与原生事件相同的接口。
-
-为什么要另外实现一套事件机制呢？原因是为了解决跨平台、兼容性问题。
-
-### 合成事件与原生事件区别
-
-- 对于事件名称命名方式，原生事件为全小写，合成事件采用小驼峰
-- 对于事件函数处理语法，原生事件使用引号，合成事件使用大括号
-- 对于阻止浏览器的默认行为，原生事件使用 return false，合成事件采用 event.prenventDefault()
+合成事件采用事件冒泡机制，当在某具体元素上触发事件时，需要冒泡到顶部被挂载事件的那个元素时，才会真正地执行事件；
+而原生事件，当某具体元素触发事件时，会立刻执行该事件。因此若要比较事件触发的先后顺序时，原生事件会先执行，合成事件会后执行。
 
 ### setState 执行机制
 
@@ -173,11 +72,6 @@ const ref = React.createRef()
 
 React 本身执行的过程和代码都是同步的，只是合成事件和生命周期钩子函数的调用顺序在更新之前，
 导致在合成事件和钩子函数中没法立马拿到更新后的值，就是我们所说的异步了。
-
-### super() 和 super(props) 的区别
-
-- super()，为了继承父类中的 this 对象
-- super(props)，为了在 constructor 中使用 this.props
 
 ### 组件通信
 
@@ -240,19 +134,121 @@ const value = useContext(context)
 - Redux
 - 等等
 
-### React Diff 原理
+### React Diff 算法
 
-- 把树形结构按照层级分解，只比较同级元素
-- 给列表结构的每个单元添加唯一的 key 属性，方便比较
-- React 只会匹配相同 class 的 component（这里面的 class 指的是组件的名字）
-- 合并操作，调用 component 的 setState 方法的时候，React 将其标记为 dirty。到每一个事件循环结束，React 检查所有标记 dirty 的 component 重新绘制。
-- 选择性子树渲染。开发人员可以重写 shouldComponentUpdate 提高 diff 的性能。
+React Diff 算法是 React 用于比较虚拟 DOM 的算法，它可以在更新组件时，只对需要更新的部分进行重新渲染，从而提高性能。
+
+- v16 之前（三大策略）
+  - Tree Diff
+    - 对虚拟 DOM 树进行同层比较。当同层节点不存在时，就会卸载该节点及其所有子节点
+  - Component Diff
+    - 对于同一类型组件，继续按照同层比较策略进行比较
+    - 对于不同类型组件，则直接替换
+  - Element Diff
+    - 对于全新的节点，会执行插入操作
+    - 对于已有的元素节点，根据其是否可复用，执行移动或删除操作
+- v16 之后
+  - 待完善
 
 ### React Fiber 理解
 
-- React Fiber 是一种基于浏览器的单线程调度算法。
-- React 16 之前 ，reconcilation 算法实际上是递归，想要中断递归是很困难的，React 16 开始使用了循环来代替之前的递归。
-- React Fiber：一种将 recocilation （递归 diff），拆分成无数个小任务的算法；它随时能够停止，恢复。停止恢复的时机取决于当前的一帧（16ms）内，还有没有足够的时间允许计算
+Fiber 是 React v16 之后推出的新的协调引擎。
+
+在 React v16 之前，React 一旦开始更新，就会递归遍历节点，期间无法中止。
+当组件比较庞大，更新操作耗时较长时，就会导致主线程长时间被占用，从而无法响应用户的输入或动画的渲染，很影响用户体验。
+
+Fiber 解决了这个问题，它将更新操作碎片化，分割成多个小任务。
+每个任务执行完，就会判断有无超过切片时间，没超过就继续执行下一个任务，超过了就让出主线程。
+这时 React 就会检查有无更高优先级的任务要做，如果有那就去执行，没有的话就继续更新。
+这样就给其他任务一个执行的机会，避免主线程长时间被独占。
+
+需要注意的是，当低优先级更新渲染任务被更高优先级的任务打断时，低优先级任务先前所做工作则会完全作废，需要重头再来。
+而重头再来会导致 render 之前的生命周期重复调用，其中的逻辑也会重复执行，造成隐患，这也是 React 弃用旧版本生命周期的原因。
+
+当低优先级任务长时间被打断无法执行时，会产生任务饥饿行为，这时就会提高低优先级任务的优先级，并让其立即执行。
+
+:::tip 个人理解
+
+- 切片中断任务，无高优先级任务打断，可以恢复
+- 切片中断任务，有高优先级任务打断，则需要重头再来。
+:::
+
+#### 两大阶段
+
+React Fiber 把一个更新过程分为两个阶段：
+
+- Render 阶段：生成新的 fiber 树并 diff 出变化的节点（可被打断）
+- Commit 阶段：更新 DOM，将发生变化的部分渲染到页面上（不可打断）
+
+#### 三层架构
+
+- Scheduler（调度器）：负责调度任务的优先级，高优先级任务优先进入协调器
+- Reconciler（协调器）：负责生成新的 fiber 树并 diff 出变化的节点
+- Renderer（渲染器）：负责更新 DOM，将发生变化的部分渲染到页面上
+
+#### 双缓冲树
+
+双缓冲是指将需要变化的部分，先在内存中计算改变，计算完成后一次性展示给用户，这样用户就不会感知到明显的计算变化。
+新版本 React 中，更新渲染的过程会被频繁中断，如果不使用缓冲技术，那用户就会感知到明显的中断变化。
+
+React 中最多会同时存在两棵 Fiber 树。
+已经计算完成并展示到视图中的 Fiber 树称为 current Fiber 树，正在内存中构建的 Fiber 树称为 workInProgress Fiber 树。
+workInProgress Fiber 树一旦构建完成，就会与 current Fiber 树互换，循环往复。
+
+#### Fiber 节点之间是怎么关联的
+
+每个 Fiber 节点都有一个 child 指针指向它第一个孩子节点，也会有一个 return 指针指向它的父节点，另外会有一个叫做 sibling 的指针指向它的兄弟节点，
+如果它没有孩子、父亲或兄弟节点，指向就为空。由此 Fiber 节点通过指针之间的关联，就形成了一条 Fiber 链表，也就是我们常说的 Fiber 树。
+
+### React 新特性
+
+#### New Hooks
+
+- useTransition
+- useDeferredValue
+- 等等
+
+#### Auto Batches
+
+合成事件、生命周期、原生事件、异步。  
+setState 统统支持批处理。
+
+如果想退出批处理，可用 flushSync 方法包裹，注意其内部的多个 setState 仍然为批处理。
+
+#### Time Slice
+
+在旧版本 React 中，React 一旦开始更新，就会递归遍历节点，期间无法中止。新版本中，更新操作被分解成多个小任务。
+每个任务执行完，就会判断有无超过切片时间，没超过就继续执行下一个任务，超过了就让出主线程，让其有机会处理其他的操作，等不忙的时候在继续执行。
+从而避免了长时间的阻塞，提高了应用的响应速度和流畅度。
+
+#### Concurrent Mode
+
+##### 为什么需要并发？
+
+因为我们期望一些不重要的更新不会影响用户的操作，比如长列表渲染不会阻塞用户 input 输入，从而提升用户体验。
+
+##### 并发模式是怎样的？
+
+在多个更新并存的情况下，根据更新的优先级，优先执行紧急的更新，其次再执行不那么紧急的更新。  
+
+举个栗子：你正在沙发上看电视，这时候外卖到了，就需要暂停电视去开门拿外卖。这里外卖明显是优先级更高的紧急任务，所以我们暂停优先级较低的电视，先去拿外卖。
+
+##### 并发模式是如何实现的？
+
+- 对于每个更新，为其分配一个优先级 lane[^1]，用于区分其紧急程度。
+- 通过 Fiber 结构将不紧急的更新拆分成多段更新，并通过宏任务的方式将其合理分配到浏览器的帧当中。这样就能使得紧急任务能够插入进来。
+- 高优先级的更新会打断低优先级的更新，等高优先级更新完成后，再开始低优先级更新。
+
+#### Render API
+
+```
+ReactDOM.render(<App />, root)
+ReactDOM.createRoot(root).render(<App />)
+```
+
+#### Strict Mode
+
+开启严格模式后，每次 setState 更新，React 会渲染组件两次。（正式环境下只会渲染一次）
 
 ## React hooks
 
@@ -575,3 +571,5 @@ ReactDOM.render(
 接收两个函数参数，第一个函数是用来追踪并返回数据作为第二个函数的输入
 - when  
 接收两个函数参数，第一个函数返回 true 时，执行第二个函数
+
+[^1]: lane 表示任务优先级，数字越小优先级越高
