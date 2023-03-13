@@ -515,6 +515,9 @@ div {
   display: -webkit-box; // 盒模型
   -webkit-line-clamp: 4; // 控制文本行数
   -webkit-box-orient: vertical; // 垂直布置子元素
+
+  text-overflow: ellipsis; // 不确定是否需要加上，不加好像也能显示省略号
+  word-break: break-all; // 避免行末是英文或数字带来的问题
 }
 
 PS: 该方法不兼容 IE

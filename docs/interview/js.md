@@ -119,7 +119,8 @@ function throttle(fn, wait) {
 
   return function(...args) {
     if(timer) return
-    fn.apply(this, args)
+
+    timer = fn.apply(this, args)
     setTimeout(() => timer = null, wait)
   }
 }
