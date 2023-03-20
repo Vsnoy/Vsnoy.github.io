@@ -239,6 +239,14 @@ document.documentElement
 
 ## DOM 事件
 
+### 触摸事件
+
+```
+touchstart 手指触摸屏幕
+touchmove 手指滑动屏幕
+touchend 手指离开屏幕
+```
+
 ### 鼠标事件
 
 ```
