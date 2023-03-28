@@ -40,6 +40,7 @@
 - [木易杨](https://muyiy.cn/)
 - [女王控](https://blog.towavephone.com/)
 - [前端日志](https://mengsixing.github.io/)
+- [前端那些事儿](https://jonny-wei.github.io/blog/)
 
 ## 订阅
 

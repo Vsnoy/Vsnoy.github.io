@@ -46,308 +46,6 @@
   3. 子组件 destroyed
   4. 父组件 destoryed
 
-### created 和 mounted 钩子函数区别
-
-- created：在模板渲染成 `HTML` 前调用，即通常初始化某些属性值，然后再渲染成视图。
-- mounted：在模板渲染成 `HTML` 后调用，通常是初始化页面完成后，再对 `HTML` 的 `DOM` 节点进行一些需要的操作。
-
-### 在哪个生命周期钩子函数内调用异步请求
-
-可以在钩子函数 `created` 、`beforeMount` 、`mounted` 中进行调用，因为在这三个钩子函数中，`data` 已经创建，可以将服务端返回的数据进行赋值。
-
-推荐在 `created` 钩子函数中调用异步请求，有以下优点：
-
-- 能更快获取到服务端数据，减少页面加载时间，用户体验更好。
-- SSR 不支持 beforeMount、mounted 钩子函数，放在 created 中有助于一致性。
-
-### 在哪个生命周期钩子函数内操作 DOM
-
-在钩子函数 `mounted` 被调用前，`Vue` 已经将编译好的模板挂载到页面上，所以在 `mounted` 中可以访问操作 `DOM` 。
-
-### 父组件如何监听子组件的生命周期钩子函数
-
-以父组件监听子组件 `mounted` 生命周期钩子函数为例，有以下两种方法
-
-```
-// Parent.vue
-<Child @mounted="doSomething"/>
-    
-// Child.vue
-mounted() {
-  this.$emit("mounted");
-}
-```
-
-```
-//  Parent.vue
-<Child @hook:mounted="doSomething" ></Child>
-    
-//  Child.vue
-mounted(){
-  console.log("mounted");
-}
-```
-
-### data 为什么必须是一个函数
-
-`Vue` 组件可以复用，则可能存在多个实例，如果使用对象形式定义 `data` ，则会导致它们共用一个 `data` 对象，那么状态变更将会影响所有组件实例。
-
-### 常用指令
-
-- v-if
-- v-else
-- v-show
-- v-on
-- v-bind
-- v-for
-- v-model
-- v-cloak
-
-### v-if 和 v-show 区别
-
-- `v-if` 是动态地向 `DOM` 树内添加或者删除 `DOM` 元素，性能消耗大，适合单次切换。
-- `v-show` 是通过设置 `DOM` 元素的 `display` 样式属性控制显隐，性能消耗低，适合频繁切换。
-
-### v-model 实现原理
-
-```
-<input v-model="value" />
-<input v-bind:value="value" v-on:input="value = $event.target.value" />
-```
-
-```
-在自定义组件中，v-model 默认会利用名为 value 的 prop 和名为 input 的事件
-
-父组件：
-<Child v-model="message"></Child>
-
-子组件：
-<div>{{value}}</div>
-
-props:{
-  value: String
-},
-methods: {
-  test1(){
-    this.$emit('input', '小红')
-  },
-},
-```
-
-### 为什么要避免 v-if 和 v-for 连用
-
-`Vue2` 中 `v-for` 优先级高于 `v-if` ，`Vue3` 中则相反。
-
-在 `Vue2` 中同时使用时，`v-for` 会优先作用，造成性能浪费；  
-在 `vue3` 中同时使用时，`v-if` 会优先作用，导致其访问不了 `v-for` 中的变量。
-
-一般我们在两种常见的情况下会倾向于这样做：
-
-- 为了过滤一个列表中的项目（比如 v-for="user in users" v-if="user.isActive")。在这种情形下，请将 users 替换为一个计算属性（比如 activeUsers)，让其返回过滤后的列表。  
-  
-```
-<ul>
-  <li v-for="user in activeUsers" :key="user.id">
-    {{ user.name }}
-  </li>
-</ul>
-
-computed: {
-  activeUsers: function () {
-    return this.users.filter(function (user) {
-      return user.isActive
-    })
-  }
-}
-```
-
-- 为了避免渲染本应该被隐藏的列表（比如 v-for="user in users" v-if="shouldShowUsers")。这种情形下，请将 v-if 移动至容器元素上 （比如 ul、ol)。
-  
-```
-<ul v-if="shouldShowUsers">
-  <li v-for="user in users" :key="user.id">
-    {{ user.name }}
-  </li>
-</ul>
-```
-
-### 双向绑定/响应式原理
-
-- `Vue2` 采用数据劫持结合发布订阅模式，通过 `Object.defineProperty` 来劫持各个属性的 `setter/getter` ，在数据变动时发布消息给订阅者，触发相应的监听回调。  
-- `Vue3` 采用基于代理 `proxy` 的 `observer` 实现，提供全语言覆盖的反应性跟踪，消除了 `Vue2` 基于 `Object.defineProperty` 实现所存在的诸多限制。
-
-:::tip
-
-Vue2 缺点
-
-- 无法监测到对象属性的新增或删除
-- 无法监测到数组的变化（push、pop、shift、unshift、splice、sort、reverse 除外）
-  - 对数组基于下标的修改
-  - 对数组 length 的修改
-  :::
-
-### methods、computed、watch 区别
-
-- methods  
-没有缓存，只要调用，就会执行。
-- computed  
-具有缓存性，依赖于其他属性值，只有当属性值发生改变的时候才会重新计算。
-- watch  
-没有缓存，监听 data 中的属性，属性值只要发生变化就会执行。
-
-```
-export default {
-  data() {
-    return {
-      firstName: 'Violet',
-      lastName: 'Evergarden',
-      
-      msg: ''
-    }
-  },
-  methods:{
-    getFullName() {
-      console.log(this.fullNameA, this.fullNameB)
-    }
-  },
-  computed:{
-    fullNameA() { // 仅读取
-      return this.firstName + ' ' + this.lastName
-    },
-    fullNameB: { // 读取和设置
-      get() {
-        return this.firstName + ' ' + this.lastName
-      }
-      set(val) {
-        this.msg = val
-      }
-    }
-  },
-  watch:{
-    firstName(newVal, oldVal) {
-      this.fullName = newVal + ' ' + this.lastName
-    },
-    lastName: {
-      handler(newVal, oldVal) {
-        this.fullName = this.firstName + ' ' + newVal
-      }
-    }
-  }
-}
-```
-
-### slot 插槽用法
-
-插槽可分为三种：默认插槽、具名插槽、作用域插槽。
-
-- 默认插槽
-
-```
-父组件：
-<Child>
-  <template>默认插槽</template>
-</Child>
-
-子组件：
-<div>
-  <slot>默认插槽 - 后备内容</slot>
-</div>
-
-渲染成：
-<div>
-  <div>默认插槽</div>
-</div>
-```
-
-- 具名插槽
-
-```
-父组件：
-<Child>
-  <template v-slot:violet>具名插槽</template>
-</Child>
-
-子组件：
-<div>
-  <slot name="violet">具名插槽 - 后备内容</slot>
-</div>
-
-渲染成：
-<div>
-  具名插槽
-</div>
-```
-
-- 作用域插槽
-
-```
-父组件：
-<Child>
-  <template v-slot:violet="slotProps">
-    作用域插槽 - {{slotProps.user.name}}
-  </template>
-</Child>
-
-子组件：
-<div>
-    <slot name="violet" :user="user">作用域插槽 - 后备内容</slot>
-</div>
-
-data(){
-  return {
-    user: {
-      name: 'violet'
-    }
-  }
-}
-
-渲染为：
-<div>
-  作用域插槽 - violet
-</div>
-```
-
-### keep-alive 作用
-
-可以使被包含的组件保留状态，避免重新渲染。
-
-```
-<keep-alive>
-  <router-view v-if="$route.meta.keepAlive"></router-view>
-</kepp-alive>
-
-{
-  path: '/',
-  name: 'xxx',
-  component: () => import('../src/views/xxx.vue'),
-  meta: {
-    keepAlive: true // 需要被缓存
-  }
-}
-```
-
-```
-// 将缓存 name 为 A 或 B 的组件
-<keep-alive include='A, B'>
-  <router-view/>
-</keep-alive>
-
-// 将不缓存 name 为 C 的组件
-<keep-alive exclude='C'>
-  <router-view/>
-</keep-alive>
-```
-
-### 数据更新，视图会立即同步执行重新渲染吗
-
-不会立即同步执行重新渲染。
-
-`Vue` 实现响应式并不是数据发生变化之后 `DOM` 立即变化，而是按一定的策略进行 `DOM` 的更新。
-`Vue` 在更新 `DOM` 时是异步执行的。只要侦听到数据变化， `Vue` 将开启一个队列，并缓冲在同一事件循环中发生的所有数据变更。
-
-如果同一个 `watcher` 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 `DOM` 操作是非常重要的。
-然后，在下一个的事件循环 `tick` 中，`Vue` 刷新队列并执行实际（已去重的）工作。
-
 ### $nextTick 作用
 
 `Vue` 在修改数据后，视图不会立刻更新，而是等同一事件循环中的所有数据变化完成之后，再统一进行视图更新。
@@ -382,16 +80,111 @@ var app = new Vue({
 </script>
 ```
 
-### 常用修饰符
+### 为什么要避免 v-if 和 v-for 连用
 
-- .prevent  
-阻止事件的默认行为
-- .stop  
-阻止单击事件冒泡
-- .self  
-事件在该元素自身触发时触发回调
-- .once  
-事件只触发一次
+`Vue2` 中 `v-for` 优先级高于 `v-if` ，`Vue3` 中则相反。
+
+在 `Vue2` 中同时使用时，`v-for` 会优先作用，造成性能浪费；  
+在 `Vue3` 中同时使用时，`v-if` 会优先作用，导致其访问不了 `v-for` 中的变量。
+
+一般我们在两种常见的情况下会倾向于这样做：
+
+- 为了过滤一个列表中的项目（比如 v-for="user in users" v-if="user.isActive")。在这种情形下，请将 users 替换为一个计算属性（比如 activeUsers)，让其返回过滤后的列表。  
+  
+```
+<ul>
+  <li v-for="user in activeUsers" :key="user.id">
+    {{ user.name }}
+  </li>
+</ul>
+
+computed: {
+  activeUsers: function () {
+    return this.users.filter(function (user) {
+      return user.isActive
+    })
+  }
+}
+```
+
+- 为了避免渲染本应该被隐藏的列表（比如 v-for="user in users" v-if="shouldShowUsers")。这种情形下，请将 v-if 移动至容器元素上 （比如 ul、ol)。
+  
+```
+<ul v-if="shouldShowUsers">
+  <li v-for="user in users" :key="user.id">
+    {{ user.name }}
+  </li>
+</ul>
+```
+
+### 响应式原理
+
+响应式，即数据驱动视图自动化更新。我们修改数据，视图也会随之响应更新。
+
+- `Vue2` 采用数据劫持结合发布订阅模式，通过 `Object.defineProperty` 来劫持各个属性的 `setter/getter` 。当我们访问数据时，会触发 `getter` 进行依赖收集；修改数据时，会触发 `setter` 派发通知，触发相应的监听回调。
+
+  ```
+  Object.defineProperty(obj, key, {
+    // 拦截 get，当我们访问 data.key 时会被这个方法拦截到
+    get: function getter () {
+        // 我们在这里收集依赖
+        return obj[key];
+    },
+
+    // 拦截 set，当我们为 data.key 赋值时会被这个方法拦截到
+    set: function setter (newVal) {
+        // 当数据变更时，通知依赖项变更 UI
+    } 
+  })
+  ```  
+  
+- `Vue3` 与 `Vue2` 响应式原理核心思想一致，区别在于 `Vue3` 数据劫持是基于 `Proxy` 代理，其拦截的是整个对象，而不再是某个属性。`Proxy` 可以创建一个代理对象，实现对原对象的代理。外界对原对象进行的访问，都必须通过这层代理对象的拦截。
+
+  ```
+  let nObj = new Proxy(obj, {
+    // 拦截 get，当我们访问 nObj.key 时会被这个方法拦截到
+    get: function (target, propKey, receiver) {
+      return Reflect.get(target, propKey, receiver);
+    },
+
+    // 拦截 set，当我们为 nObj.key 赋值时会被这个方法拦截到
+    set: function (target, propKey, value, receiver) {
+      return Reflect.set(target, propKey, value, receiver);
+    }
+  })
+  ```
+
+:::tip
+Vue2 响应式缺点
+
+- 无法监测到对象属性的新增或删除
+- 无法监测到数组的变化（push、pop、shift、unshift、splice、sort、reverse 除外）
+  - 对数组基于下标的修改
+  - 对数组 length 的修改
+:::
+
+### 双向数据绑定原理
+
+双向绑定，即数据和视图相互驱动更新。在 `Vue` 中，一般使用 `v-model` 来体现双向绑定。
+
+```
+<input v-model="value" />
+<input v-bind:value="value" v-on:input="value = $event.target.value" />
+```
+
+:::tip
+聊到这个时候，也要谈谈响应式原理，即数据驱动视图。
+:::
+
+### 数据更新，视图会立即同步执行重新渲染吗
+
+不会立即同步执行重新渲染。
+
+`Vue` 实现响应式并不是数据发生变化之后 `DOM` 立即变化，而是按一定的策略进行 `DOM` 的更新。
+`Vue` 在更新 `DOM` 时是异步执行的。只要侦听到数据变化， `Vue` 将开启一个队列，并缓冲在同一事件循环中发生的所有数据变更。
+
+如果同一个 `watcher` 被多次触发，只会被推入到队列中一次。这种在缓冲时去除重复数据对于避免不必要的计算和 `DOM` 操作是非常重要的。
+然后，在下一个的事件循环 `tick` 中，`Vue` 刷新队列并执行实际（已去重的）工作。
 
 ### 组件通信
 

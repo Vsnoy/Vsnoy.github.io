@@ -332,6 +332,35 @@ div {
 }
 ```
 
+### 自适应正方形
+
+- vw
+
+  ```
+  .squre {
+    width: 10vw; // 10% 也行
+    height: 10vw;
+  }
+  ```
+
+- aspect-ratio
+
+  ```
+  .squre {
+    width: 10%;
+    aspect-ratio: 1;
+  }
+  ```
+
+- padding 百分比相对于父元素宽度
+
+  ```
+  .squre {
+    width: 10%;
+    padding-bottom: 10%;
+  }
+  ```
+
 ### 0.5px 线
 
 - scale  

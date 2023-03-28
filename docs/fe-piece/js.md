@@ -460,6 +460,15 @@ Promise.resolve(v) 与 new Promise(r => r(v)) 不完全等价。
 - 数组在内存中连续，链表不连续
 - 数组元素在栈区，链表元素在堆区
 
+## Object & Map
+
+- 对象的 key 只能是字符串，Map 则可以是任意类型
+- 对象获取 value 是通过点号或中括号，Map 则是通过 get 方法
+- 对象检查 key 是否存在是通过 hasOwnProperty 方法，Map 则是通过 has 方法
+- 对象删除某个属性是通过 delete 操作符，Map 则是通过 delete 方法
+
+[对象和 Map 区别](https://telegra.ph/7-Differences-between-Objects-and-Maps-in-JavaScript-08-21)
+
 ## click/dblclick 单双击点击事件冲突
 
 `click` 事件延迟执行，`dblclick` 时取消 `click` 延时。
@@ -547,3 +556,56 @@ Math.floor(Math.random() * (max – min + 1)) + min
 ```
 
 [JS 生成限定范围内随机数](https://blog.csdn.net/allway2/article/details/122558537)
+
+## 图片转 base64
+
+- Canvas
+  
+  ```
+  // 1. 构造一个 img 元素，将 url 赋给 img
+  // 2. 等待图片加载完成
+  // 3. 构造一个 canvas 元素
+  // 4. 将 img 元素画到 canvas 上
+  // 5. 通过 canvas 得到 base64
+  
+  // 可参考：https://juejin.cn/post/6844903997841604621
+  
+  const convertImgToBase64 = (url) => {
+    const img = new Image()
+
+    img.crossOrigin = 'Anonymous'
+
+    img.addEventListener('load', () => {
+      const canvas = document.createElement('canvas')
+      canvas.width = img.width
+      canvas.height = img.height
+
+      const ctx = canvas.getContext('2d')
+      ctx.drawImage(img, 0, 0)
+      
+      const base64 = canvas.toDataURL('image/png')
+      console.log(base64)
+    })
+
+    img.src = url
+  }
+  ```
+
+- FileReader
+
+  ```
+  // 1. 创建一个 FileReader 对象
+  // 2. 等待图片文件读取完毕
+  // 3. 通过 FileReader 得到 base64
+
+  const convertImgToBase64 = (file) => {
+    const reader = new FileReader()
+
+    reader.addEventListener('load', () => {
+      const base64 = reader.result
+      console.log(base64)
+    })
+
+    reader.readAsDataURL(file)
+  }
+  ```
