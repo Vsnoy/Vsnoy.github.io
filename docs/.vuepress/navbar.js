@@ -19,7 +19,7 @@ module.exports = [
     text: "题库",
     link: encodeURI("/question/闭包"),
   },
-  process.env.NODE_ENV === "development" && {
+  {
     text: "踩坑",
     link: encodeURI("/debug/js"),
   },
