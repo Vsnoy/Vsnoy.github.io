@@ -211,6 +211,43 @@ data(){
     this.arr.splice(0)
     ```
 
+## 为什么要避免 v-if 和 v-for 连用
+
+`Vue2` 中 `v-for` 优先级高于 `v-if` ，`Vue3` 中则相反。
+
+在 `Vue2` 中同时使用时，`v-for` 会优先作用，造成性能浪费；  
+在 `Vue3` 中同时使用时，`v-if` 会优先作用，导致其访问不了 `v-for` 中的变量。
+
+一般我们在两种常见的情况下会倾向于这样做：
+
+- 为了过滤一个列表中的项目（比如 v-for="user in users" v-if="user.isActive")。在这种情形下，请将 users 替换为一个计算属性（比如 activeUsers)，让其返回过滤后的列表。  
+  
+```
+<ul>
+  <li v-for="user in activeUsers" :key="user.id">
+    {{ user.name }}
+  </li>
+</ul>
+
+computed: {
+  activeUsers: function () {
+    return this.users.filter(function (user) {
+      return user.isActive
+    })
+  }
+}
+```
+
+- 为了避免渲染本应该被隐藏的列表（比如 v-for="user in users" v-if="shouldShowUsers")。这种情形下，请将 v-if 移动至容器元素上 （比如 ul、ol)。
+  
+```
+<ul v-if="shouldShowUsers">
+  <li v-for="user in users" :key="user.id">
+    {{ user.name }}
+  </li>
+</ul>
+```
+
 ## 在哪个生命周期钩子函数内调用异步请求
 
 可以在钩子函数 `created` 、`beforeMount` 、`mounted` 中进行调用，因为在这三个钩子函数中，`data` 已经创建，可以将服务端返回的数据进行赋值。
