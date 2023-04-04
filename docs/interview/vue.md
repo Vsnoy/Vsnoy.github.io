@@ -8,16 +8,18 @@
 
 `activated` 和 `deactivated` 是 `keep-alive` 独有的生命周期。用 `keep-alive` 包裹的组件在切换时不会进行销毁，而是缓存到内存中并执行 `deactivated` 钩子函数，命中缓存渲染后会执行 `activated` 钩子函数。
 
-- beforeCreate
-- created
-- beforeMount
-- mounted
-- beforeUpdate
-- updated
-- beforeDestory
-- detoryed
-- activated
-- deactivated
+| Vue 2 生命周期 | Vue 3 生命周期  | 执行时间说明                 |
+| -------------- | --------------- | ---------------------------- |
+| beforeCreate   | setup           | 组件创建前执行               |
+| created        | setup           | 组件创建后执行               |
+| beforeMount    | onBeforeMount   | 组件挂载到节点上之前执行     |
+| mounted        | onMounted       | 组件挂载完成后执行           |
+| beforeUpdate   | onBeforeUpdate  | 组件更新之前执行             |
+| updated        | onUpdated       | 组件更新完成之后执行         |
+| beforeDestroy  | onBeforeUnmount | 组件卸载之前执行             |
+| destroyed      | onUnmounted     | 组件卸载完成后执行           |
+| activated      | onActivated     | 被激活时执行                 |
+| deactivated    | onDeactivated   | 切换组件后，原组件消失前执行 |
 
 在 `created` 、`beforeMount` 、`mounted` 阶段可进行异步请求。  
 在 `mounted` 阶段可操作 `DOM`。

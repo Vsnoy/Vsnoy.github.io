@@ -104,7 +104,46 @@ export default {
 }
 ```
 
-### slot 插槽的三种用法
+## ref & reactive
+
+- ref 通常用来定义基本数据类型（也支持对象和数组），reactive 通常用来定义对象和数组
+- ref 在 script 中访问数据时需要加 .value，reactive 不需要加
+- ref、reactive 赋值过程中可能会丢失响应式
+
+```
+let ref_obj = ref({a: 1})
+let reactive_obj = reactive({a: 1})
+
+ref_obj.value = {a: 2} // ref 直接赋值不会丢失响应式
+reactive_obj = {a: 2} // reactive 直接赋值会丢失响应式
+```
+
+```
+let ref_obj = ref({a1: 1, b1: {val: 2}})
+let reactive_obj = reactive({a2: 1, b2: {val: 2}})
+
+let {a1, b1} = ref_obj.value
+let {a2, b2} = reactive_obj
+
+// 不论是 ref 还是 reactive 解构赋值，解构基本数据类型时，都会丢失响应式
+a1 = 2
+a2 = 2
+
+// 不论是 ref 还是 reactive 解构赋值，解构引用数据类型时，都不会丢失响应式
+b1.val = 3
+b2.val = 3
+```
+
+:::warning
+本应丢失响应式的数据操作场景中，若同时存在未丢失响应式的数据操作，则本应丢失响应式的数据操作会保持响应式。原因不明，还待深入研究。
+:::
+
+## watch & watchEffect
+
+- watch 可以访问侦听状态变化前后的值，而 watchEffect 无法访问
+- watch 默认初始时不会执行回调，而 watchEffect 会
+
+## slot 插槽的三种用法
 
 插槽可分为三种：默认插槽、具名插槽、作用域插槽。
 
