@@ -31,6 +31,7 @@
 
 - [JavaScript Guidebook](https://tsejx.github.io/javascript-guidebook/)
 - [Angus Yang](https://www.imyangyong.com/blog/categories/)
+- [hfzvictory](http://file.jing999.cn/)
 - [GuangJu](https://zguangju.github.io/)
 - [Marvin](https://canyuegongzi.github.io/)
 - [YaoFly](https://github.com/yaofly2012/note/issues)
