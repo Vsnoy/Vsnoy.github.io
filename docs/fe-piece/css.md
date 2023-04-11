@@ -1,5 +1,15 @@
 # CSS
 
+## 常用函数
+
+- var | attr | url
+- rgb | rgba | hsl | hsla
+- calc | min | max | clamp
+- translate | rotate | scale | skew
+- linear-gradient | radial-gradient | conic-gradient
+- blur | brightness | drop-shadow | grayscale | invert | opacity
+- cubic-bezier
+
 ## 样式优先级
 
 !important > 行内 > 内部 > 外部 > id > 类 | 伪类 | 属性 > 标签 | 伪元素 > 通配符 > 继承 > 浏览器默认

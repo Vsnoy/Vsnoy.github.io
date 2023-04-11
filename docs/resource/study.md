@@ -36,6 +36,7 @@
 - [Marvin](https://canyuegongzi.github.io/)
 - [YaoFly](https://github.com/yaofly2012/note/issues)
 - [Jacky](https://github.com/Jacky-Summer/personal-blog)
+- [Ishadeed](https://ishadeed.com/)
 - [余光](https://webbj97.github.io/summary/blog/)
 - [冴羽](https://github.com/mqyqingfeng/Blog)
 - [木易杨](https://muyiy.cn/)
