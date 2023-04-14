@@ -292,6 +292,8 @@ animation: animation-name, animation-duration,              // 常用
 
 #### 常规三角形
 
+##### 边框法
+
 需要哪个三角形就给它颜色，其余三边透明。  
 以向下的三角形为例。
 
@@ -304,7 +306,19 @@ div {
 }
 ```
 
+##### 锥形渐变法
+
+```
+div {
+  width: 40px;
+  height: 40px;
+  background: conic-gradient(from -45deg, red 90deg, transparent 90deg);
+}
+```
+
 #### 直角三角形
+
+##### 边框法
 
 要直角三角形，则只能设置两条边，上下和左右混搭，一条给颜色，一条透明。  
 以靠左向下的直角三角形为例。
@@ -315,6 +329,16 @@ div {
   height: 0;
   border-right: 20px solid transparent;
   border-top: 20px solid red;
+}
+```
+
+##### 线性渐变法
+
+```
+div {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, red 50%, transparent 50%);
 }
 ```
 

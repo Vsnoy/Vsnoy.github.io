@@ -26,6 +26,9 @@ git branch
 // 查看本地和远程所有分支
 git branch -a
 
+// 创建分支
+git branch <branch>
+
 // 切换分支
 git checkout <branch>
 
@@ -124,6 +127,12 @@ git remote add origin <repo>
 
 // 修改远程仓库地址
 git remote set-url origin <repo>
+
+// 将本地分支推送到远程仓库
+git push origin <branch>
+
+// 将本地分支推送到远程仓库并关联
+git push --set-upstream origin <branch>
 ```
 
 ## 其他

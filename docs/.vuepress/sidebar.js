@@ -131,6 +131,7 @@ module.exports = {
       collapsible: true,
       children: [
         "/engineer/other/ssh 连接 github",
+        "/engineer/other/gitlab 创建 mr",
         "/engineer/other/linux 常用命令",
       ],
     },
