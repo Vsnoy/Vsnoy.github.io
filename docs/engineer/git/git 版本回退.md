@@ -33,6 +33,14 @@ git revert <commit>
 git push
 ```
 
+## git checkout
+
+切换到某次提交，用于查看或拷贝代码，然后再切回去。该提交之后的所有提交记录依然保留。
+
+```
+git checkout <commit>
+```
+
 ## 参考
 
 - [git 版本回退](https://blog.csdn.net/weixin_42412601/article/details/124070871)
