@@ -252,11 +252,16 @@ touchend 手指离开屏幕
 ```
 click 点击
 dblclick 双击
-mouseenter 鼠标悬停在元素上
-mouseleave 鼠标离开元素
+
+mousemove 鼠标移动
 mousedown 鼠标按键按下
 mouseup 鼠标按键抬起
-mousemove 鼠标移动
+
+mouseenter 鼠标悬停在元素上
+mouseleave 鼠标离开元素
+
+mouseover 鼠标悬停在元素上（冒泡）
+mouseout 鼠标离开元素（冒泡）
 ```
 
 ### 键盘事件
@@ -292,6 +297,12 @@ blur 失焦
 focus 聚焦
 input 输入
 change 输入后失焦
+```
+
+### 其他事件
+
+```
+contextmenu 右键事件
 ```
 
 [JS 常用 DOM 事件总结](https://blog.csdn.net/weixin_46534854/article/details/115635532)
