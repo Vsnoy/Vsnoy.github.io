@@ -355,17 +355,20 @@ handleClick = () => { ... }
 ### className
 
 ```
+<div className={index === current_index ? "active" : ''}>是否选中</div>
 
-<div className={index === currentIndex ? "active" : null}>是否选中</div>
+<div className={`violet ${index === current_index ? "active" : ''}`}>是否选中</div>
+<div className={["violet", index === current_index ? "active" : ''].join(' ')}>是否选中</div>
+```
 
-<div className={`violet ${index === currentIndex ? "active" : null}`}>是否选中</div>
-<div className={["violet", index === currentIndex ? "active" : null].join(' ')}>是否选中</div>
+```
+<div className={`${styles.violet} ${index === current_index && styles.active }`}>是否选中</p>
+<div className={`${styles.violet} ${index === current_index ? styles.active : '' }`}>是否选中</p>
 ```
 
 ### style
 
 ```
-<div style={{display: index === currentIndex ? "block" : "none"}}>是否隐藏</div>
-
-<div style={{backgroundColor: "pink", display: index === currentIndex ? "block" : "none"}}>是否隐藏</div>
+<div style={{display: index === current_index ? "block" : "none"}}>是否隐藏</div>
+<div style={{backgroundColor: "pink", display: index === current_index ? "block" : "none"}}>是否隐藏</div>
 ```

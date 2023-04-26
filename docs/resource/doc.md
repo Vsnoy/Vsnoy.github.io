@@ -15,6 +15,7 @@
 - [Next](https://www.nextjs.cn/docs/getting-started)
 - [Ant Design](https://ant.design/docs/react/introduce-cn)
 - [Ant Design Pro](https://pro.ant.design/zh-CN/docs/getting-started/)
+- [Ant Design Pro Preview](https://preview.pro.ant.design/dashboard/analysis)
 - [Element UI](https://element.eleme.cn/#/zh-CN/component/installation)
 - [Element Plus](https://element-plus.org/zh-CN/component/button.html)
 - [Echarts](https://echarts.apache.org/zh/index.html)

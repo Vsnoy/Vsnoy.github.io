@@ -46,6 +46,9 @@ git branch -d <branch>
 
 // 删除远程分支
 git push origin --delete <branch>
+
+// 将本地分支与远程分支关联
+git branch --set-upstream-to=origin/<origin branch> <local branch>
 ```
 
 ## 储藏

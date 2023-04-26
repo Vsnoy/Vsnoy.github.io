@@ -29,6 +29,10 @@ module.exports = {
       link: encodeURI("/fe-piece/regex"),
     },
     {
+      text: "Package",
+      link: encodeURI("/fe-piece/package"),
+    },
+    {
       text: "Other",
       link: encodeURI("/fe-piece/other"),
     },
@@ -198,6 +202,10 @@ module.exports = {
     {
       text: "UniApp",
       link: encodeURI("/debug/uni-app"),
+    },
+    {
+      text: "Antd Pro",
+      link: encodeURI("/debug/antd-pro"),
     },
   ],
   "/interview/": [
