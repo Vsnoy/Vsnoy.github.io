@@ -13,3 +13,7 @@ request 返回的数据格式有严格要求
 ```
 
 <https://blog.csdn.net/weixin_45432575/article/details/120152923>
+
+## ProTable 查询区域自动生成的 datePicker 设置为中文
+
+<https://github.com/ant-design/pro-components/issues/6777>

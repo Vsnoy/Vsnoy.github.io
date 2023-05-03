@@ -13,6 +13,10 @@ module.exports = {
       link: encodeURI("/fe-piece/js"),
     },
     {
+      text: "Dart",
+      link: encodeURI("/fe-piece/dart"),
+    },
+    {
       text: "Vue",
       link: encodeURI("/fe-piece/vue"),
     },
