@@ -31,12 +31,12 @@
   - ellipsis（自动缩略）
   - render（渲染表格数据列单元格内容）
   - renderFormItem（渲染表格数据列对应查询项内容）
-  - formItemProps（可用于配置必填项提示）
+  - formItemProps
   - fieldProps
   - filters
   - onFilter
   - initialValue（查询表单项初始值）
-- request（请求表格数据，对返回格式有严格要求）
+- request（请求数据，对返回格式有严格要求）
   - 不分页返回格式：{data: [], total: 20, success: true}
   - 分页返回格式： {data: [], pageSize: 10, current: 1, total: 20, success: true}
 - actionRef
@@ -65,6 +65,26 @@
 ```
 - submitter
 ```
+
+#### ProDescriptions 组件
+
+```
+- title
+- columns
+- dataSource
+- request（请求数据，对返回格式有严格要求）
+  - 格式：{data: {}, success: true}
+```
+
+## 路由库
+
+### React Router
+
+- useNavigate
+- useParams
+- useSearchParams
+- useLocation
+- useRoutes
 
 ## 工具库
 

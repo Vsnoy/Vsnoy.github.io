@@ -16,9 +16,9 @@
   - Vue 技术内幕
   - Vue 设计与实现
   - React 设计原理
+  - Flutter 实战
 - 开源书
   - Hello 算法
-  - CSS 动画 101
   - Defensive CSS
   - JavaScript 正则迷你书
   - 现代 JavaScript 教程
