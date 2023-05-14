@@ -11,3 +11,7 @@
 ## "this" 隐式具有类型 "any"，因为它没有类型注释
 
 <https://segmentfault.com/q/1010000020504860>
+
+## 装饰器语法报错
+
+<https://blog.csdn.net/xxwyxlf/article/details/104334317>

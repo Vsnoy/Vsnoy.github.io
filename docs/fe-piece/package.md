@@ -30,7 +30,7 @@
     - 使用格式：(a, b) => a.xxx - b.xxx
   - ellipsis（自动缩略）
   - render（渲染表格数据列单元格内容）
-  - renderFormItem（渲染表格数据列对应查询项内容）
+  - renderFormItem（渲染表格数据列对应查询项内容，可用于个性化定义查询项）
   - formItemProps
   - fieldProps
   - filters
@@ -64,6 +64,7 @@
 
 ```
 - submitter
+- formRef
 ```
 
 #### ProDescriptions 组件
@@ -80,13 +81,43 @@
 
 ### React Router
 
-- useNavigate
-- useParams
-- useSearchParams
-- useLocation
+- useNavigate（路由跳转）
+- useParams（获取动态路由 params 参数，形如：/a/:id）
+- useSearchParams（获取路径后面的 search 参数，形如：/a?name=violet）
+- useLocation（获取路由跳转时附带的 state 参数）
 - useRoutes
 
+## 状态库
+
+### Mobx
+
+- when
+- autorun
+- reaction
+
+### Recoil
+
+- Atom（状态）
+- Selector（派生状态）
+
+- useRecoilState
+- useRecoilValue
+- useSetRecoilState
+
 ## 工具库
+
+### qs
+
+```
+// parse 解析 url
+const url = 'https://www.example.com/search?name=violet&age=20';
+const params = qs.parse(url.split('?')[1]);
+
+// stringify 拼接 url
+const params = {name: 'violet', age: 20}
+let url = 'https://www.example.com/search'
+url += `?${qs.stringify(params)}`;
+```
 
 ### moment
 
