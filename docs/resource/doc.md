@@ -24,6 +24,7 @@
 - [Mobx](https://zh.mobx.js.org/README.html)
 - [Recoil](https://recoiljs.org/zh-hans/docs/introduction/installation)
 - [Axios](https://axios-http.com/zh/docs/intro)
+- [Vitest](https://cn.vitest.dev/guide/)
 - [Vite](https://cn.vitejs.dev/)
 - [Webpack](https://www.webpackjs.com/)
 - [ESLint](https://cn.eslint.org/)

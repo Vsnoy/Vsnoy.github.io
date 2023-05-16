@@ -67,6 +67,17 @@
 - formRef
 ```
 
+#### ModalForm 组件
+
+```
+- title
+- open
+- modalProps
+  - destroyOnClose
+  - onCancel
+- onFinish
+```
+
 #### ProDescriptions 组件
 
 ```
