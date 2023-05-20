@@ -111,6 +111,8 @@
 - Atom（状态）
 - Selector（派生状态）
 
+---
+
 - useRecoilState
 - useRecoilValue
 - useSetRecoilState
@@ -169,4 +171,20 @@ moment(string).diff(moment(string), string)
 moment(string).isBefore(string)
 moment(string).isAfter(string)
 moment(string).isBetween(string, string)
+```
+
+### currency
+
+```
+// 加减乘除
+currency(xxx).add(xxx)
+currency(xxx).subtract(xxx)
+currency(xxx).multipy(xxx)
+currency(xxx).divide(xxx)
+
+// 格式转换（默认保留两位小数，四舍五入）
+currency(xxx).value
+
+// 设置精度
+currency(xxx, { precision: 3 })
 ```

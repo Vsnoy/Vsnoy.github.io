@@ -12,6 +12,8 @@ git config --global --list
 
 // 添加配置
 git config --global xxx xxx
+git config --global user.name <name>
+git config --global user.email <email>
 
 // 删除配置
 git config --global --unset xxx

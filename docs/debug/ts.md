@@ -15,3 +15,8 @@
 ## 装饰器语法报错
 
 <https://blog.csdn.net/xxwyxlf/article/details/104334317>
+
+## 具有相同大小写的相对路径上的，文件名与仅在大小写中已包含的文件名不同
+
+<https://segmentfault.com/q/1010000042706938>
+<https://github.com/ant-design/pro-components/issues/6592>
