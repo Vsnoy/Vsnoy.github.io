@@ -7,21 +7,24 @@ sidebarDepth: 0
 使用别名自定义 `git logp` 指令，简化 `log` 输出日志
 
 ```
-git config --global alias.logp 'log --pretty=format:%cd:%cn:%h:%s'
+git config --global alias.logp "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 ```
 
 ```
 git config --list|grep alias
 
-// alias.logp=log --pretty=format:%cd:%cn:%h:%s
+// alias.logp=log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 ```
 
 ```
 git logp
 
-// Thu Sep 24 20:14:23 2020 +0800:author111:fa25b2abe:aaaaa
-// Thu Sep 24 18:01:15 2020 +0800:author2222:57340e88a:bbbbbb
-// Thu Sep 24 17:58:13 2020 +0800:author111:362e52925:ccccccccccc 
+// * 7dcf359 2023-05-16 | update [Vsnoy]
+// * 7ac2b61 2023-05-14 | update [Vsnoy]
+// * 3302973 2023-05-10 | update [Vsnoy]
+
+git logp --max-count=1
+// * 7dcf359 2023-05-16 | update [Vsnoy]
 ```
 
 ## 参考

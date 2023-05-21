@@ -17,6 +17,31 @@ git config --global user.email <email>
 
 // 删除配置
 git config --global --unset xxx
+
+// 更新配置
+git config --global --replace-all xxx xxx
+
+// 设置别名
+git config --global alias.xxx "xxx"
+```
+
+## 回退
+
+```
+// 本地已提交，需要保留已经更改的文件，将其回退到工作区
+git reset HEAD^
+
+// 本地已提交，需要保留已经更改的文件，将其回退到暂存区
+git reset --soft HEAD^
+
+// 本地已提交，不需要保留已经更改的文件，直接回退到工作区
+git reset --hard HEAD^
+
+// 本地已暂存，需要保留已经更改的文件，将其回退到工作区
+git restore --staged .
+
+// 本地工作区，不需要保留已经更改的文件，直接丢弃
+git restore .
 ```
 
 ## 分支

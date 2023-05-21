@@ -7,7 +7,7 @@
   - CSS 权威指南
 - JS
   - 深入理解 ES6
-  - ES6 标准入门  
+  - ES6 标准入门
   - 你不知道的 JavaScript
   - JavaScript 权威指南
   - JavaScript 高级程序设计
@@ -19,6 +19,7 @@
   - Flutter 实战
 - 开源书
   - Hello 算法
+  - Git Learning
   - Defensive CSS
   - JavaScript 正则迷你书
   - 现代 JavaScript 教程

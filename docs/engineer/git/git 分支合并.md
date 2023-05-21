@@ -33,3 +33,11 @@ git cherry-pick –-skip
 // 放弃 cherry-pick
 git cherry-pick --abort
 ```
+
+## Gitlab MR / Github PR 合并
+
+可参考：<https://www.cnblogs.com/hi3254014978/p/15860103.html>
+
+## Rebase 变基合并
+
+待研究
