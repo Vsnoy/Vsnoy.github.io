@@ -29,6 +29,17 @@ git push --set-upstream origin <branch>
 Github 中的 PR 与 Gitlab 中的 MR 是一个意思，不同平台说法不一样。
 :::
 
+## MR 合并冲突解决
+
+如果可以在 GitLab 页面上操作解决冲突，那再好不过，如果不行要求本地解决冲突，则遵循以下步骤。
+
+- 本地切换到 develop 分支，拉取最新代码
+- 然后本地切换到你 MR 对应的 feature 分支
+- 而后在本地 feature 分支上通过 git merge 合并 develop 分支
+- 在编辑器内解决冲突后，重新走 MR 流程
+
+总结：MR 是在远程将功能分支合并到开发分支，而解决冲突是在本地将开发分支合并到功能分支。
+
 ## 参考
 
 - [MR 和 PR 的区别](https://www.cnblogs.com/hi3254014978/p/15860103.html)
