@@ -33,6 +33,7 @@ module.exports = {
     clipboardPlugin({}),
     backToTopPlugin(),
     mdEnhancePlugin({
+      tex: true,
       footnote: true,
       sub: true,
       sup: true,

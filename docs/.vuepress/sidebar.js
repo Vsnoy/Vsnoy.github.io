@@ -1,6 +1,14 @@
 module.exports = {
   "/math/": [
     {
+      text: "初等数学",
+      collapsible: true,
+      children: [
+        "/math/elementary-math/初等代数",
+        "/math/elementary-math/平面三角",
+      ],
+    },
+    {
       text: "高等数学",
       collapsible: true,
       children: ["/math/higher-math/函数、极限和连续"],
