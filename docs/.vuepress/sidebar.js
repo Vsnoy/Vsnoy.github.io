@@ -1,4 +1,11 @@
 module.exports = {
+  "/math/": [
+    {
+      text: "高等数学",
+      collapsible: true,
+      children: ["/math/higher-math/函数、极限和连续"],
+    },
+  ],
   "/fe-piece/": [
     {
       text: "HTML",
