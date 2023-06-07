@@ -5,7 +5,10 @@ module.exports = {
       collapsible: true,
       children: [
         "/math/elementary-math/初等代数",
-        "/math/elementary-math/平面三角",
+        "/math/elementary-math/三角函数",
+        "/math/elementary-math/幂函数",
+        "/math/elementary-math/指数函数",
+        "/math/elementary-math/对数函数",
       ],
     },
     {
@@ -294,6 +297,12 @@ module.exports = {
     {
       text: "开发规范",
       link: encodeURI("/resource/standard"),
+    },
+  ],
+  "/other/": [
+    {
+      text: "Tex 语法",
+      link: encodeURI("/other/tex 语法"),
     },
   ],
 };

@@ -1,7 +1,7 @@
 module.exports = [
   {
     text: "数学",
-    link: encodeURI("/math/elementary-math/平面三角"),
+    link: encodeURI("/math/elementary-math/三角函数"),
   },
   {
     text: "碎片",
@@ -34,5 +34,9 @@ module.exports = [
   {
     text: "资源",
     link: encodeURI("/resource/study"),
+  },
+  {
+    text: "杂项",
+    link: encodeURI("/other/tex 语法"),
   },
 ].filter(Boolean);
