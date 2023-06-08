@@ -4,6 +4,7 @@ module.exports = {
       text: "初等数学",
       collapsible: true,
       children: [
+        "/math/elementary-math/思路方法",
         "/math/elementary-math/初等代数",
         "/math/elementary-math/三角函数",
         "/math/elementary-math/幂函数",
@@ -14,7 +15,11 @@ module.exports = {
     {
       text: "高等数学",
       collapsible: true,
-      children: ["/math/higher-math/函数、极限和连续"],
+      children: [
+        "/math/higher-math/碎片记录",
+        "/math/higher-math/思路方法",
+        "/math/higher-math/易错概念",
+      ],
     },
   ],
   "/fe-piece/": [
