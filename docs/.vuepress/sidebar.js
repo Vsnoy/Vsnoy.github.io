@@ -18,6 +18,7 @@ module.exports = {
       children: [
         "/math/higher-math/碎片记录",
         "/math/higher-math/思路方法",
+        "/math/higher-math/重要概念",
         "/math/higher-math/易错概念",
       ],
     },
