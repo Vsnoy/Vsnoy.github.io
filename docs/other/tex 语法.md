@@ -1,10 +1,11 @@
 # Tex 语法
 
 ```
-- 对数：\log_{}{} | \ln{} | \lg{}
-- 上下角标：^{} | _{}
 - 空格：\space | \quad
+- 上下角标：^{} | _{}
+- 对数：\log_{}{} | \ln{} | \lg{}
 - 极限：\lim | \limits_{}
+- 积分：\int_{}^{}
 - 无穷：\infty
 ```
 
@@ -22,6 +23,11 @@
 - 分组大括号：\begin{cases} \end{cases}
 - 任意号：\forall
 - 存在号：\exists
+- 求和号：\sum
+```
+
+```
+\displaystyle
 ```
 
 ```
