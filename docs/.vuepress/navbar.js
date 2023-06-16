@@ -1,7 +1,7 @@
 module.exports = [
   {
     text: "数学",
-    link: encodeURI("/math/elementary-math/三角函数"),
+    link: encodeURI("/math/higher-math/碎片记录"),
   },
   {
     text: "碎片",
