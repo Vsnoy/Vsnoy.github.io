@@ -14,6 +14,7 @@
 - 根号：\sqrt{} | \sqrt[]{}
 - 加减号：\pm | \mp
 - 近似号：\sim
+- 右等号：\Rightarrow
 - 双向等号：\Leftrightarrow | \Longleftrightarrow | \Updownarrow
 - 小于等于号：\le
 - 大于等于号：\ge
