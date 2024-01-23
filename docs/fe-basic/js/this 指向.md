@@ -16,7 +16,7 @@ sidebarDepth: 2
 
 ```
 function foo() {
-  console.log(this) 
+  console.log(this)
 }
 
 foo() //window
@@ -53,11 +53,11 @@ var obj = {
       // 相当于直接调用 callback()，非对象调用，属第一种默认绑定，此时 this 绑定全局
       fn()
     }
-    
+
     function callback() {
       console.log(this.a)
-    }  
-    
+    }
+
     setTimeout(callback, 1000)
   }
 }
@@ -126,7 +126,7 @@ var obj = {
 
 // obj.foo 指向 foo，因此 bar 也指向 foo，实际相当于 bar = foo，bar 相当于 foo 的函数别名
 // 相当于 bar = function foo() { console.log(this.a) }
-var bar = obj.foo 
+var bar = obj.foo
 
 // 相当于直接调用 foo()，非对象调用，属于第一种默认绑定，此时 this 绑定全局
 bar() // 1
@@ -139,7 +139,7 @@ obj.foo() // 2
 ##### 回调函数
 
 ```
-var a = 1 
+var a = 1
 
 function foo() {
   console.log(this.a)
@@ -169,7 +169,7 @@ doFoo( obj.foo ) // 1
 三者区别：
 
 - `call` 和 `apply` 会调用函数，`bind` 不会调用函数
-- `call` 、bind 与 `apply` 传参方式不一样，`call` 或 `bind` 传参使用逗号隔开，`apply` 使用数组传递
+- `call` 、`bind` 与 `apply` 传参方式不一样，`call` 或 `bind` 传参使用逗号隔开，`apply` 使用数组传递
 
 ```
 function foo(b) {
@@ -211,10 +211,10 @@ var bar = new foo(2) // foo {a: 2}
 执行上下文可分为两类（eval 函数忽略）
 
 - 全局执行上下文  
-    遇到全局代码执行，创建一个全局执行上下文。
+   遇到全局代码执行，创建一个全局执行上下文。
 - 函数执行上下文  
-    遇到一个函数执行，创建一个函数执行上下文。
-:::
+   遇到一个函数执行，创建一个函数执行上下文。
+  :::
 
 ```
 var a = 2
@@ -242,7 +242,7 @@ obj.a = 1
 
 obj.foo = function() {
  console.log(this) // this 指向 obj
- 
+
  setTimeout(() => {
   // 箭头函数没有自己的 this，故指向父级执行上下文中的 this，此处即 foo 函数执行上下文
   console.log(this.a) // this 指向 obj
@@ -296,7 +296,7 @@ obj.foo() // 2 不是 1
 3. 显式绑定？绑定到指定的对象。
 4. 隐式绑定？绑定到该对象。
 5. 默认绑定？绑定到全局对象，严格模式下绑定到 `undefined` 。
-:::
+   :::
 
 ## 参考
 
