@@ -11,7 +11,7 @@ var object = {
   }
 }
 
-console.log(object.getName()) 
+console.log(object.getName())
 console.log((object.getName = object.getName)())
 
 // 输出
@@ -63,6 +63,7 @@ obj1.getTag = obj2.getTag
 obj1.getTag()
 
 // 输出结果
+window​
 window
 1-1
 1-2
